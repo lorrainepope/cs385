@@ -3,6 +3,9 @@ package com.wherecycle.smartrecycle;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +16,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.wherecycle.smartrecycle.adapters.MyRecyclerAdapter;
+import com.wherecycle.smartrecycle.model.RecycleableItem;
+import com.wherecycle.smartrecycle.model.RecycleableType;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    MyRecyclerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,14 +33,14 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /* *//*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        }*//*);*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +50,28 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mainRecycler);
+        RecycleableItem item = new RecycleableItem(RecycleableType.Aluminium);
+        RecycleableItem item1 = new RecycleableItem(RecycleableType.Textiles);
+        RecycleableItem item2 = new RecycleableItem(RecycleableType.ScrapMetal);
+        RecycleableItem item3 = new RecycleableItem(RecycleableType.Plastics);
+        RecycleableItem item4 = new RecycleableItem(RecycleableType.Furniture);
+        RecycleableItem item5 = new RecycleableItem(RecycleableType.Electronics);
+        RecycleableItem item6 = new RecycleableItem(RecycleableType.Cardboard);
+        RecycleableItem item7 = new RecycleableItem(RecycleableType.Batteries);
+        RecycleableItem item8 = new RecycleableItem(RecycleableType.Glass);
+        ArrayList<RecycleableItem> arrayList = new ArrayList<>(8);
+        arrayList.add(item);
+        arrayList.add(item1);
+        arrayList.add(item2);
+        arrayList.add(item3);
+        arrayList.add(item4);
+        arrayList.add(item5);
+        arrayList.add(item6);
+        arrayList.add(item7);
+       arrayList.add(item8);
+        recyclerView.setAdapter(new MyRecyclerAdapter(this, arrayList));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
 
     @Override
@@ -80,17 +112,21 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.bottle_banks) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.bin_comapanies) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.useful_links) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.benefits) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.not_recycle) {
+
+        } else if (id == R.id.symbols) {
+
+        } else if (id == R.id.settings) {
+
+        }else if (id == R.id.about) {
 
         }
 
