@@ -1,5 +1,6 @@
 package com.wherecycle.smartrecycle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -113,6 +114,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.bottle_banks) {
+            Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.bin_comapanies) {
 
