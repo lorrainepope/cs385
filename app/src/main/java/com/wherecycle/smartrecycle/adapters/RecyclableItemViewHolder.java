@@ -25,4 +25,5 @@ public class RecyclableItemViewHolder extends RecyclerView.ViewHolder {
     public TextView getTextView() {
         return textView;
     }
+
 }

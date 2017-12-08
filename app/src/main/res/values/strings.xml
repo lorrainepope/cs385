@@ -5,7 +5,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="bottle_bank">Bottle banks in your area</string>
     <string name="bin_companies">Bin companies in your area</string>
     <string name="useful_links">Useful Links</string>
     <string name="benefits">Benefits of Recycling</string>
@@ -16,4 +15,5 @@
     <string name="header">What would you like to recycle?</string>
     <string name="aluminium_cans">Aluminium Cans</string>
     <string name="glass_bottles">Glass Bottles</string>
+    <string name="show_all">Show All Recycling Centres</string>
 </resources>

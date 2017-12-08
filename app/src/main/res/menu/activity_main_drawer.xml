@@ -5,7 +5,7 @@
         <item
             android:id="@+id/bottle_banks"
             android:icon="@drawable/ic_bin"
-            android:title="@string/bottle_bank" />
+            android:title="@string/show_all" />
         <item
             android:id="@+id/bin_comapanies"
             android:icon="@drawable/ic_bin_lorry"
