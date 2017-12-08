@@ -46,7 +46,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclableItemViewHo
         else if (item.getType() == RecycleableType.Furniture)
             resourceId = R.drawable.furniture;
         else if (item.getType() == RecycleableType.Glass)
-            resourceId = R.drawable.glass;
+            resourceId = R.drawable.glassbottles;
         else if(item.getType() == RecycleableType.Plastics)
             resourceId = R.drawable.plastics;
         else if (item.getType() == RecycleableType.ScrapMetal)
