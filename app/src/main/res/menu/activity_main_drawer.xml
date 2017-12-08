@@ -29,8 +29,6 @@
         <item
             android:id="@+id/addRecycler"
             android:title="Add Recycling Centre" />
-
-
     </group>
 
     <item android:title="">

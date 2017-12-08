@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DBLayoutActivity" />
-        <activity android:name=".AddRecyclingActivity"></activity>
+        <activity android:name=".AddRecyclingActivity"/>
     </application>
 
 </manifest>
