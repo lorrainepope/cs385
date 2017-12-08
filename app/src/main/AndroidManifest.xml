@@ -26,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".DBLayoutActivity" />
+        <activity android:name=".AddRecyclingActivity"></activity>
     </application>
 
 </manifest>
