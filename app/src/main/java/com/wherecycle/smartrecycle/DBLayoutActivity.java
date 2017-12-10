@@ -1,4 +1,4 @@
-package com.wherecycle.smartrecycle;
+/**package com.wherecycle.smartrecycle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.wherecycle.smartrecycle.model.Locations;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,7 @@ public class DBLayoutActivity extends AppCompatActivity {
         myDBList = (ListView)findViewById(R.id.DBList);
 
         final ArrayAdapter<Locations> arrayAdapter = new ArrayAdapter<Locations>(this, android.R.layout.simple_list_item_1, myDBArray);
-        myDBArray.setAdapter(arrayAdapter);
+        myDBList.setAdapter(arrayAdapter);
         myDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -63,6 +64,7 @@ public class DBLayoutActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        })
+        });
     }
 }
+**/

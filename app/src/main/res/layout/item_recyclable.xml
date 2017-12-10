@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@id/titleText"
@@ -24,6 +24,7 @@
         android:layout_marginTop="0dp"
         app:layout_constraintStart_toStartOf="@id/imageView"
         app:layout_constraintTop_toBottomOf="@id/imageView"
-        tools:text="Paper" />
+        tools:text="Paper"
+        android:textColor="@color/colorPrimaryDark"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -28,7 +28,9 @@
             android:title="@string/symbols"/>
         <item
             android:id="@+id/addRecycler"
-            android:title="Add Recycling Centre" />
+            android:title="Add Recycling Centre"
+            android:icon="@drawable/ic_add"/>
+
     </group>
 
     <item android:title="">
