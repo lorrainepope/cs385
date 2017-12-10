@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wherecycle.smartrecycle">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_round"
@@ -19,15 +20,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".SplashScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".DBLayoutActivity" />
-        <activity android:name=".AddRecyclingActivity"></activity>
+        <activity android:name=".AddRecyclingActivity" />
+        <activity android:name=".usefulLinksActivity" />
+        <activity android:name=".recycling_symbols"></activity>
     </application>
 
 </manifest>
