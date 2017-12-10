@@ -25,11 +25,13 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mainRecycler"
-        android:layout_width="344dp"
-        android:layout_height="434dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+       />
+
 
 </android.support.constraint.ConstraintLayout>
