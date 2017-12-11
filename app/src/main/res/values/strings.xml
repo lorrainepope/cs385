@@ -19,5 +19,9 @@
     <string name="EPAString"><a href="https://www.epa.ie">EPA</a></string>
     <string name="Citizens"><a href="http://www.citizensinformation.ie">Citizens Information</a></string>
     <string name="WeeeString"><a href="http://www.weeeireland.ie">Weee Ireland</a></string>
+<<<<<<< HEAD
     <string name="show_all">Show all</string>
+=======
+    <string name="show_all">Bottle banks in your area</string>
+>>>>>>> master
 </resources>
