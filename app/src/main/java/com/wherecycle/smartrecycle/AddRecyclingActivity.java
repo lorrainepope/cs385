@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.wherecycle.smartrecycle.model.Locations;
 
 import javax.microedition.khronos.egl.EGLDisplay;
@@ -24,6 +25,8 @@ public class AddRecyclingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recycling);
 
+        myDB = FirebaseDatabase.getInstance().getReference();
+
         eName = (EditText)findViewById(R.id.enterRName);
         eContact = (EditText)findViewById(R.id.enterRContact);
         eLat = (EditText)findViewById(R.id.enterRLat);
@@ -35,12 +38,13 @@ public class AddRecyclingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String DBName = eName.getText().toString();
                 String DBContact = eContact.getText().toString();
-                
-                long DBLat = eLat.getText().;
-                long DBLong = eLong.toString();
+                String strLat = eLat.getText().toString();
+                long DBLat = Long.getLong(strLat);
+                String strLong = eLong.getText().toString();
+                long DBLong = Long.getLong(strLong);
 
-                Locations push = new Locations(DBName, DBLat, DBLong, DBContact);
-
+                Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBContact);
+                myDB.push().setValue(newRecycler);
             }
         });
     }
