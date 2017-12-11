@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.addRecycler) {
             Intent addIntent = new Intent(MainActivity.this, AddRecyclingActivity.class);
             startActivity(addIntent);
-            
+
         } else if (id == R.id.settings) {
 
         }else if (id == R.id.about) {
