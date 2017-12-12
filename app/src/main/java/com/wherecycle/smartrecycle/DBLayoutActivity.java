@@ -1,4 +1,4 @@
-/**package com.wherecycle.smartrecycle;
+package com.wherecycle.smartrecycle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +18,7 @@ public class DBLayoutActivity extends AppCompatActivity {
     private DatabaseReference myDB;
     private ArrayList<Locations> myDBArray = new ArrayList<>();
     private ListView myDBList;
-    private ArrayList<Locations> myKeys = new ArrayList<>();
+    private ArrayList<String> myKeys = new ArrayList<>();
 
 
     @Override
@@ -34,7 +34,7 @@ public class DBLayoutActivity extends AppCompatActivity {
         myDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Locations value = dataSnapshot.getValue(String.class);
+                Locations value = dataSnapshot.getValue(Locations.class);
                 String key = dataSnapshot.getKey();
                 myDBArray.add(value);
                 myKeys.add(key);
@@ -43,7 +43,7 @@ public class DBLayoutActivity extends AppCompatActivity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Locations value = dataSnapshot.getValue(String.class);
+                Locations value = dataSnapshot.getValue(Locations.class);
                 String key = dataSnapshot.getKey();
                 int index = myKeys.indexOf(key);
                 myDBArray.set(index, value);
@@ -67,4 +67,3 @@ public class DBLayoutActivity extends AppCompatActivity {
         });
     }
 }
-**/
