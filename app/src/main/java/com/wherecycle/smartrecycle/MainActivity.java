@@ -115,8 +115,6 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.bottle_banks) {
-            Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
-            startActivity(intent);
 
         } else if (id == R.id.bin_comapanies) {
 
@@ -142,7 +140,8 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.showall){
-            
+            Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
