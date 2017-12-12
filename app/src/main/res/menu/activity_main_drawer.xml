@@ -30,6 +30,9 @@
             android:id="@+id/addRecycler"
             android:title="Add Recycling Centre"
             android:icon="@drawable/ic_add"/>
+        <item
+            android:id="@+id/showall"
+            android:title="Show All Recycling Facilities"/>
 
     </group>
 
