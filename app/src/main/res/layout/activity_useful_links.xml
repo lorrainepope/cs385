@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wherecycle.smartrecycle.usefulLinksActivity">
+
+    <ImageView
+        android:id="@+id/imageRep"
+        android:layout_width="137dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_repak" />
+
+    <ImageView
+        android:id="@+id/imageEpa"
+        android:layout_width="142dp"
+        android:layout_height="137dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_epa" />
+
+    <TextView
+        android:id="@+id/re"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="276dp"
+        android:layout_marginStart="68dp"
+        android:text="@string/RepakString"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/ePa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="276dp"
+        android:layout_marginEnd="96dp"
+        android:text="@string/EPAString"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageCitizens"
+        android:layout_width="128dp"
+        android:layout_height="124dp"
+        android:layout_marginBottom="84dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/re"
+        app:layout_constraintVertical_bias="0.466"
+        app:srcCompat="@mipmap/ic_citizens" />
+
+    <TextView
+        android:id="@+id/citizensText"
+        android:layout_width="114dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginStart="52dp"
+        android:text="@string/Citizens"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageWeee"
+        android:layout_width="122dp"
+        android:layout_height="118dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@mipmap/ic_weee" />
+
+    <TextView
+        android:id="@+id/weeeText"
+        android:layout_width="82dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="76dp"
+        android:text="@string/WeeeString"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

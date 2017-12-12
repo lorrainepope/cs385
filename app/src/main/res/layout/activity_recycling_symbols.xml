@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wherecycle.smartrecycle.recycling_symbols">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/alusymbol"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src = "@mipmap/ic_alysymbol"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/glasssymbol"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_glass"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/greendot"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_greendot"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/mobius"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_mobius"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/nonhousehold"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_nonhousehold"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/paper"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_paper"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/steel"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_steel"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/tidyman"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_tidyman"
+                android:longClickable="true"/>
+
+            <ImageView
+                android:id="@+id/wood"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ic_wood"
+                android:longClickable="true"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+</android.widget.RelativeLayout>
+

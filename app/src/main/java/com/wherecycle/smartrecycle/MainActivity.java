@@ -1,5 +1,6 @@
 package com.wherecycle.smartrecycle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -69,9 +70,10 @@ public class MainActivity extends AppCompatActivity
         arrayList.add(item5);
         arrayList.add(item6);
         arrayList.add(item7);
-       arrayList.add(item8);
+        arrayList.add(item8);
         recyclerView.setAdapter(new MyRecyclerAdapter(this, arrayList));
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false
+        ));
     }
 
     @Override
@@ -113,16 +115,22 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.bottle_banks) {
+            //Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
+            //startActivity(intent);
 
         } else if (id == R.id.bin_comapanies) {
 
         } else if (id == R.id.useful_links) {
+            Intent usefulIntent = new Intent(MainActivity.this, usefulLinksActivity.class);
+            startActivity(usefulIntent);
 
         } else if (id == R.id.benefits) {
 
         } else if (id == R.id.not_recycle) {
 
         } else if (id == R.id.symbols) {
+            Intent symbolIntent = new Intent(MainActivity.this, recycling_symbols.class);
+            startActivity(symbolIntent);
 
         } else if (id == R.id.settings) {
 
