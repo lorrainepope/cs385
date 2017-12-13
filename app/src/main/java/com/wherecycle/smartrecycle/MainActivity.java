@@ -115,8 +115,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.bottle_banks) {
-            //Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.bin_comapanies) {
 
@@ -132,10 +132,17 @@ public class MainActivity extends AppCompatActivity
             Intent symbolIntent = new Intent(MainActivity.this, recycling_symbols.class);
             startActivity(symbolIntent);
 
+        } else if (id == R.id.addRecycler) {
+            Intent addIntent = new Intent(MainActivity.this, AddRecyclingActivity.class);
+            startActivity(addIntent);
+
         } else if (id == R.id.settings) {
 
         }else if (id == R.id.about) {
 
+        }
+        else if (id == R.id.showall){
+            
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
