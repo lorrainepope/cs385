@@ -21,4 +21,5 @@
     <string name="WeeeString"><a href="http://www.weeeireland.ie">Weee Ireland</a></string>
     <string name="show_all_centres">Show all Recycling Centres</string>
     <string name="show_all">Bottle banks in your area</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
