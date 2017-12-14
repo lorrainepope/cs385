@@ -39,9 +39,9 @@ public class AddRecyclingActivity extends AppCompatActivity {
                 String DBName = eName.getText().toString();
                 String DBContact = eContact.getText().toString();
                 String strLat = eLat.getText().toString();
-                long DBLat = Long.getLong(strLat);
+                double DBLat = Double.parseDouble(strLat);
                 String strLong = eLong.getText().toString();
-                long DBLong = Long.getLong(strLong);
+                double DBLong = Double.parseDouble(strLong);
 
                 Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBContact);
                 myDB.push().setValue(newRecycler);
