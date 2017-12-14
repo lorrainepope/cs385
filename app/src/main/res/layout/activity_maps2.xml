@@ -3,28 +3,6 @@
     android:layout_width= "match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id = "@+id/m111"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="5">
-
-        <EditText
-            android:id="@+id/etLocationEntry"
-            android:layout_width = "0dp"
-            android:layout_height = "wrap_content"
-            android:layout_weight="4"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Go"/>
-
-    </LinearLayout>
-
-
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -32,30 +10,6 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wherecycle.smartrecycle.model.MapsActivity" />
-
-    <Button
-        android:id="@+id/btMark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mark"
-        android:layout_alignParentBottom = "true"
-        android:layout_alignParentRight="true"/>
-
-    <Button
-        android:id="@+id/btSatellite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sat"
-        android:layout_alignParentBottom = "true"
-        android:layout_toLeftOf="@+id/btMark"/>
-
-    <Button
-        android:id="@+id/btClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clear"
-        android:layout_alignParentBottom = "true"
-        android:layout_toLeftOf="@+id/btSatellite"/>
+    tools:context="com.wherecycle.smartrecycle.model.MapActivityShowAll" />
 
 </RelativeLayout>
