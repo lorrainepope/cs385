@@ -20,8 +20,11 @@ android {
 }
 
 dependencies {
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.google.firebase:firebase-database:11.0.4'
+    implementation 'com.google.android.gms:play-services-maps:11.0.4'
+    implementation 'com.google.android.gms:play-services-location:11.0.4'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -33,4 +36,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-    apply plugin: 'com.google.gms.google-services'
+
+apply plugin: 'com.google.gms.google-services'
