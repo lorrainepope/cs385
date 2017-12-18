@@ -40,19 +40,19 @@ public class recycling_symbols extends AppCompatActivity implements View.OnClick
         vibrator.vibrate(100);
         switch (view.getId()){
             case (R.id.alusymbol):
-                Toast.makeText(this, "Indicates that aluminium packaging can be recycled", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Indicates that aluminium packaging can be recycled", Toast.LENGTH_SHORT).show();
                 break;
             case (R.id.glasssymbol) :
-                Toast.makeText(this, "Indicates that a glass product can be recycled if washed out and placed into a bottle bank", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Indicates that a glass product can be recycled if washed out and placed into a bottle bank", Toast.LENGTH_SHORT).show();
                 break;
             case (R.id.greendot) :
-                Toast.makeText(this, "The producer of the packaging has contributed to the end recovery of packaging. It does not mean that the packaging is recyclable", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "The producer of the packaging has contributed to the end recovery of packaging. It does not mean that the packaging is recyclable", Toast.LENGTH_SHORT).show();
                 break;
             case (R.id.mobius) :
-                Toast.makeText(this, "Indicates that the product's packaging can be recycled", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Indicates that the product's packaging can be recycled", Toast.LENGTH_SHORT).show();
                 break;
             case (R.id.nonhousehold) :
-                Toast.makeText(this, "Item should be disposed of separately from household waste", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Item should be disposed of separately from household waste", Toast.LENGTH_SHORT).show();
                 break;
             case (R.id.paper) :
                 Toast.makeText(this, "Paper packaging can be recycled", Toast.LENGTH_SHORT).show();
@@ -64,7 +64,7 @@ public class recycling_symbols extends AppCompatActivity implements View.OnClick
                 Toast.makeText(this, "Do not litter", Toast.LENGTH_SHORT).show();
                 break;
             case (R.id.wood) :
-                Toast.makeText(this, "Wood packaging has been sustainably sourced and may have come from recycled wood", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Wood packaging has been sustainably sourced and may have come from recycled wood", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
