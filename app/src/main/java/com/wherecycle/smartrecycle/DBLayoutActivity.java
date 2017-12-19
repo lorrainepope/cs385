@@ -2,9 +2,11 @@ package com.wherecycle.smartrecycle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +19,7 @@ import java.util.ArrayList;
 
 public class DBLayoutActivity extends AppCompatActivity {
     private DatabaseReference myDB;
-    private final ArrayList<Locations> myDBArray = new ArrayList<>();
+    private final ArrayList<String> myDBArray = new ArrayList<>();
     private ListView myDBList;
     private ArrayList<String> myKeys = new ArrayList<>();
 
@@ -27,37 +29,35 @@ public class DBLayoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dblayout);
 
-        myDB = FirebaseDatabase.getInstance().getReference();
+        myDB = FirebaseDatabase.getInstance().getReference().child("Recycling Centres");
         myDBList = (ListView)findViewById(R.id.DBList);
 
-        final ArrayAdapter<Locations> arrayAdapter = new ArrayAdapter<Locations>(this, android.R.layout.simple_list_item_1, myDBArray);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myDBArray);
+        /*mAdapter = new FirebaseListAdapter<Locations>(this, Locations.class, android.R.layout.simple_list_item_1, myDB){
+            @Override
+            protected void populateView(View view, Locations mLocation, int position){
+
+            }
+        }*/
         myDBList.setAdapter(arrayAdapter);
-
-        myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-                for (DataSnapshot child : children) {
-                    Locations locations = child.getValue(Locations.class);
-                    myDBArray.add(locations);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        /*myDB.addChildEventListener(new ChildEventListener() {
+        myDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                public Centre(){
+                    public Centre(String name, String address, long lat, long long){
+                        this
+
+                    }
+                }
+                /*Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 Locations value = dataSnapshot.getValue(Locations.class);
                 String key = dataSnapshot.getKey();
                 myDBArray.add(value);
                 myKeys.add(key);
-                arrayAdapter.notifyDataSetChanged();
+                arrayAdapter.notifyDataSetChanged();*/
+                // DataSnapshot.getValue(User.class)
+                public User() {}public User(String name, String time, String date) {this.name = name;
+                    this.time= time;this.date=date;}
             }
 
             @Override
@@ -83,6 +83,25 @@ public class DBLayoutActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });*/
+        });
+
+       /* myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                for (DataSnapshot child : children) {
+                    Locations locations = child.getValue(Locations.class);
+                    myDBArray.add(locations);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });/*
+
+
     }
 }

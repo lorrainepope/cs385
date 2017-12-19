@@ -47,6 +47,8 @@ public class Locations {
     public String getAddress(){
         return email;
     }
+
+
 }
 
 

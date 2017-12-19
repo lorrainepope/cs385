@@ -166,16 +166,12 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.showall){
-<<<<<<< HEAD
-            Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
-            startActivity(intent);
-=======
+
             if(isServicesOK()) {
                 Intent mapIntent = new Intent(MainActivity.this, MapActivityShowAll.class);
                 startActivity(mapIntent);
             }
-            
->>>>>>> 073746d2d548acf4056cc7d546fcb18a94e3c887
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
