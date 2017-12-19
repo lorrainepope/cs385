@@ -1,5 +1,6 @@
 package com.wherecycle.smartrecycle;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,8 +18,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.wherecycle.smartrecycle.adapters.MyRecyclerAdapter;
+import com.wherecycle.smartrecycle.model.MapActivityShowAll;
 import com.wherecycle.smartrecycle.model.RecycleableItem;
 import com.wherecycle.smartrecycle.model.RecycleableType;
 
@@ -26,6 +33,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final String TAG = "MainActivity";
+    private static final int ERROR_DIALOG_REQUEST = 9001;
+
     MyRecyclerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +43,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-       /* *//*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        }*//*);*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -74,6 +75,31 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setAdapter(new MyRecyclerAdapter(this, arrayList));
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false
         ));
+    }
+
+    private void init(){
+
+    }
+
+    public boolean isServicesOK(){
+        Log.d(TAG, "isServicesOK: checking google services version");
+
+        int available= GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MainActivity.this);
+
+        if(available== ConnectionResult.SUCCESS){
+            //EVERYTHING IS GOOD AND USER CAN MAKE MAP REQUEST.
+            Log.d(TAG, "isServicesOk: Google Play Service is working");
+            return true;
+        }
+        else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)){
+            //AN ERROR OCCURED BUT RESOLVABLE.
+            Log.d(TAG, "isServicesOk: an error occured but we can fix it");
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this, available, ERROR_DIALOG_REQUEST);
+            dialog.show();
+        }else{
+            Toast.makeText(this, "You cant make map requests", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 
     @Override
@@ -140,8 +166,16 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.showall){
+<<<<<<< HEAD
             Intent intent = new Intent(MainActivity.this, DBLayoutActivity.class);
             startActivity(intent);
+=======
+            if(isServicesOK()) {
+                Intent mapIntent = new Intent(MainActivity.this, MapActivityShowAll.class);
+                startActivity(mapIntent);
+            }
+            
+>>>>>>> 073746d2d548acf4056cc7d546fcb18a94e3c887
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

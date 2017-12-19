@@ -32,7 +32,8 @@
             android:icon="@drawable/ic_add"/>
         <item
             android:id="@+id/showall"
-            android:title="Show All Recycling Facilities"/>
+            android:title="Show All Recycling Facilities"
+            android:icon="@drawable/ic_showall"/>
 
     </group>
 
