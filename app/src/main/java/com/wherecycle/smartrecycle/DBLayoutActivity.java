@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class DBLayoutActivity extends AppCompatActivity {
     private DatabaseReference myDB;
-    private final ArrayList<String> myDBArray = new ArrayList<>();
+    private final ArrayList<Locations> myDBArray = new ArrayList<>();
     private ListView myDBList;
     private ArrayList<String> myKeys = new ArrayList<>();
 
@@ -29,35 +29,22 @@ public class DBLayoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dblayout);
 
-        myDB = FirebaseDatabase.getInstance().getReference().child("Recycling Centres");
+        myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
         myDBList = (ListView)findViewById(R.id.DBList);
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myDBArray);
-        /*mAdapter = new FirebaseListAdapter<Locations>(this, Locations.class, android.R.layout.simple_list_item_1, myDB){
-            @Override
-            protected void populateView(View view, Locations mLocation, int position){
-
-            }
-        }*/
+        final ArrayAdapter<Locations> arrayAdapter = new ArrayAdapter<Locations>(this, android.R.layout.simple_list_item_1, myDBArray);
         myDBList.setAdapter(arrayAdapter);
         myDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                public Centre(){
-                    public Centre(String name, String address, long lat, long long){
-                        this
 
-                    }
-                }
-                /*Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 Locations value = dataSnapshot.getValue(Locations.class);
                 String key = dataSnapshot.getKey();
                 myDBArray.add(value);
                 myKeys.add(key);
-                arrayAdapter.notifyDataSetChanged();*/
-                // DataSnapshot.getValue(User.class)
-                public User() {}public User(String name, String time, String date) {this.name = name;
-                    this.time= time;this.date=date;}
+                arrayAdapter.notifyDataSetChanged();
+
             }
 
             @Override
