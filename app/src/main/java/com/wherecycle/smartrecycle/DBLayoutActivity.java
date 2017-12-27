@@ -32,7 +32,7 @@ public class DBLayoutActivity extends AppCompatActivity {
         myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
         myDBList = (ListView)findViewById(R.id.DBList);
 
-        final ArrayAdapter<Locations> arrayAdapter = new ArrayAdapter<Locations>(this, android.R.layout.simple_list_item_1, myDBArray);
+        final LocationsAdapter arrayAdapter = new LocationsAdapter(this, R.layout.list_locations, myDBArray);
         myDBList.setAdapter(arrayAdapter);
 
         myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
@@ -51,45 +51,6 @@ public class DBLayoutActivity extends AppCompatActivity {
 
                             }
         });
-
-        /*myDB.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-                Locations value = dataSnapshot.getValue(Locations.class);
-                String key = dataSnapshot.getKey();
-                myDBArray.add(value);
-                myKeys.add(key);
-                arrayAdapter.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Locations value = dataSnapshot.getValue(Locations.class);
-                String key = dataSnapshot.getKey();
-                int index = myKeys.indexOf(key);
-                myDBArray.set(index, value);
-                arrayAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });*/
-
 
 
     }

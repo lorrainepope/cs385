@@ -141,6 +141,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.bottle_banks) {
+            Intent dbintent = new Intent(MainActivity.this, DBLayoutActivity.class);
+            startActivity(dbintent);
 
         } else if (id == R.id.bin_comapanies) {
 

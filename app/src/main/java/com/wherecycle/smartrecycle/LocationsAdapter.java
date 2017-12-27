@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.wherecycle.smartrecycle.model.Locations;
 
@@ -35,5 +36,16 @@ public class LocationsAdapter extends ArrayAdapter<Locations>{
         if(listItem == null){
             listItem = LayoutInflater.from(myContext).inflate(R.layout.list_locations, parent, false);
         }
+        Locations currLoc = locationsList.get(position);
+        TextView tvName = (TextView)listItem.findViewById(R.id.locName);
+        tvName.setText("Name: "+currLoc.getName());
+        TextView tvAdd = (TextView)listItem.findViewById(R.id.locAddress);
+        tvAdd.setText("Contact: "+currLoc.getAddress());
+        TextView tvLat = (TextView)listItem.findViewById(R.id.locLat);
+        tvLat.setText("Latitude: "+tvLat);
+        TextView tvLng = (TextView)listItem.findViewById(R.id.locLng);
+        tvLng.setText("Longitude: "+tvLng);
+
+        return listItem;
     }
 }
