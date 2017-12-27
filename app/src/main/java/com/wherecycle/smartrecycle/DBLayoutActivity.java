@@ -34,7 +34,25 @@ public class DBLayoutActivity extends AppCompatActivity {
 
         final ArrayAdapter<Locations> arrayAdapter = new ArrayAdapter<Locations>(this, android.R.layout.simple_list_item_1, myDBArray);
         myDBList.setAdapter(arrayAdapter);
-        myDB.addChildEventListener(new ChildEventListener() {
+
+        myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                                for (DataSnapshot child : children) {
+                                    Locations locations = child.getValue(Locations.class);
+                                    myDBArray.add(locations);
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+        });
+
+        /*myDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
@@ -70,25 +88,10 @@ public class DBLayoutActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
-       /* myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-                for (DataSnapshot child : children) {
-                    Locations locations = child.getValue(Locations.class);
-                    myDBArray.add(locations);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });/*
 
 
     }
 }
+
