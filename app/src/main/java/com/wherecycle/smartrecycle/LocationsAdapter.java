@@ -42,9 +42,9 @@ public class LocationsAdapter extends ArrayAdapter<Locations>{
         TextView tvAdd = (TextView)listItem.findViewById(R.id.locAddress);
         tvAdd.setText("Contact: "+currLoc.getAddress());
         TextView tvLat = (TextView)listItem.findViewById(R.id.locLat);
-        tvLat.setText("Latitude: "+tvLat);
+        tvLat.setText("Latitude: "+currLoc.getLat());
         TextView tvLng = (TextView)listItem.findViewById(R.id.locLng);
-        tvLng.setText("Longitude: "+tvLng);
+        tvLng.setText("Longitude: "+currLoc.getLng());
 
         return listItem;
     }
