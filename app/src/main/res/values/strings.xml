@@ -33,5 +33,12 @@
     <string name="benefits_water">Maintains ground water quality</string>
     <string name="benefits_sustainable">Ensures a sustainable future</string>
     <string name="benefits_jobs">Creates jobs in the recycling industry</string>
-
+    <string name="thorntons">Thornton\'s Recycling \n(01)623 5133</string>
+    <string name="thorntonsWeb"><a href="https://www.thorntons-recycling.ie">Visit Website</a></string>
+    <string name="panda">\nPanda Waste Management \n1890 626 262</string>
+    <string name="pandaWeb"><a href="https://www.panda.ie">Visit Website</a></string>
+    <string name="citybin">\nThe City Bin Co \n(091)787 800</string>
+    <string name="citybinWeb"><a href="https://www.citybin.com/cms/">Visit Website</a></string>
+    <string name="greyhound">\nGreyhound Household Recycling \n1890 989 998</string>
+    <string name="greyhoundWeb"><a href="https://greyhound.ie">Visit Website</a></string>
 </resources>
