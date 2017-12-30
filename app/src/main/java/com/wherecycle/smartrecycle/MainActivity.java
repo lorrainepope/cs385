@@ -145,6 +145,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(dbintent);
 
         } else if (id == R.id.bin_comapanies) {
+            Intent binIntent = new Intent(MainActivity.this, binCompanies.class);
+            startActivity(binIntent);
 
         } else if (id == R.id.useful_links) {
             Intent usefulIntent = new Intent(MainActivity.this, usefulLinksActivity.class);

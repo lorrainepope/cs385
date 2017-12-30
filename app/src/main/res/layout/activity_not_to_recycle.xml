@@ -8,7 +8,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:scrollbars="vertical"
         android:paddingLeft="8dp">
 
@@ -23,7 +22,6 @@
                 android:textSize="24dp"
                 android:textColor="@color/splashBackground"
                 android:lines="4"
-
                 android:textAllCaps="true"
                 android:paddingBottom="6dp"/>
 
