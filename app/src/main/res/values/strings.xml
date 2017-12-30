@@ -29,4 +29,7 @@
     <string name="benefits_resources">Conserves resources such as timber, water and minerals</string>
     <string name="benefits_energy">Conserves energy</string>
     <string name="benefits_deforestation">Reduces deforestation</string>
+    <string name="benefits_water">Maintains ground water quality</string>
+    <string name="benefits_sustainable">Ensures a sustainable future</string>
+    <string name="benefits_jobs">Creates jobs in the recycling industry</string>
 </resources>
