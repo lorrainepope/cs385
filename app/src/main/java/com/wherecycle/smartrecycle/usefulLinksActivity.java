@@ -1,8 +1,11 @@
 package com.wherecycle.smartrecycle;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class usefulLinksActivity extends AppCompatActivity {
@@ -21,4 +24,7 @@ public class usefulLinksActivity extends AppCompatActivity {
         TextView We = (TextView) findViewById(R.id.weeeText);
         We.setMovementMethod(LinkMovementMethod.getInstance());
     }
+
+
 }
+
