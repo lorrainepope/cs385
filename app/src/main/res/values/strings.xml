@@ -24,4 +24,9 @@
     <string name="show_all_centres">Show all Recycling Centres</string>
     <string name="show_all">Bottle banks in your area</string>
     <string name="title_activity_maps">Map</string>
+    <string name="benefits_landfill">Lessens the need for landfills</string>
+    <string name="benefits_pollution">Reduces pollution by reducing the need to collect new raw materials</string>
+    <string name="benefits_resources">Conserves resources such as timber, water and minerals</string>
+    <string name="benefits_energy">Conserves energy</string>
+    <string name="benefits_deforestation">Reduces deforestation</string>
 </resources>

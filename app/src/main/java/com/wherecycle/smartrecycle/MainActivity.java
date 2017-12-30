@@ -151,6 +151,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(usefulIntent);
 
         } else if (id == R.id.benefits) {
+            Intent benefitsIntent = new Intent(MainActivity.this, BenefitsIfRecycling.class);
+            startActivity(benefitsIntent);
 
         } else if (id == R.id.not_recycle) {
 
