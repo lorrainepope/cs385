@@ -155,6 +155,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(benefitsIntent);
 
         } else if (id == R.id.not_recycle) {
+            Intent notRecycleIntent = new Intent(MainActivity.this, NotToRecycle.class);
+            startActivity(notRecycleIntent);
 
         } else if (id == R.id.symbols) {
             Intent symbolIntent = new Intent(MainActivity.this, recycling_symbols.class);
