@@ -78,6 +78,7 @@
             android:value="AIzaSyB94_WQBgRFvJqbgPusJtUJIWJXgZLzN-o" />
 
         <activity android:name=".binCompanies"></activity>
+        <activity android:name=".ChildActivity" />
     </application>
 
 </manifest>

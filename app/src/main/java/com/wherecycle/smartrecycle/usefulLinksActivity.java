@@ -8,7 +8,7 @@ import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class usefulLinksActivity extends AppCompatActivity {
+public class usefulLinksActivity extends ChildActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
