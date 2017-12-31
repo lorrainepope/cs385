@@ -13,7 +13,7 @@ import com.wherecycle.smartrecycle.model.Locations;
 
 import javax.microedition.khronos.egl.EGLDisplay;
 
-public class AddRecyclingActivity extends AppCompatActivity {
+public class AddRecyclingActivity extends ChildActivity {
     private DatabaseReference myDB;
     private EditText eName;
     private EditText eContact;
