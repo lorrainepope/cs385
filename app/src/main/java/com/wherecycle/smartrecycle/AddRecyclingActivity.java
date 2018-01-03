@@ -21,6 +21,7 @@ public class AddRecyclingActivity extends ChildActivity {
     private EditText eLong;
     private Button submit;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

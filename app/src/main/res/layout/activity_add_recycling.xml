@@ -58,12 +58,111 @@
         android:id="@+id/submitRecycling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Submit "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioButton
+        android:id="@+id/radioAlum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Aluminium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
+
+    <RadioButton
+        android:id="@+id/radioText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:text="Textiles"
+        app:layout_constraintEnd_toStartOf="@+id/radioMetal"
+        app:layout_constraintStart_toEndOf="@+id/radioAlum"
+        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
+
+    <RadioButton
+        android:id="@+id/radioMetal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Submit "
+        android:text="Scrap Metal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioText"
         app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
+
+    <RadioButton
+        android:id="@+id/radioPlastics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Plastics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioAlum" />
+
+    <RadioButton
+        android:id="@+id/radioElect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Electronics"
+        app:layout_constraintEnd_toStartOf="@+id/radioCard"
+        app:layout_constraintStart_toEndOf="@+id/radioPlastics"
+        app:layout_constraintTop_toBottomOf="@+id/radioText" />
+
+    <RadioButton
+        android:id="@+id/radioCard"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Cardboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioMetal" />
+
+    <RadioButton
+        android:id="@+id/radioFurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Furniture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioPlastics" />
+
+    <RadioButton
+        android:id="@+id/radioBatt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Batteries"
+        app:layout_constraintEnd_toStartOf="@+id/radioGlass"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toEndOf="@+id/radioFurn"
+        app:layout_constraintTop_toBottomOf="@+id/radioElect" />
+
+    <RadioButton
+        android:id="@+id/radioGlass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:layout_marginTop="8dp"
+        android:text="Glass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioCard" />
 
 </android.support.constraint.ConstraintLayout>
