@@ -19,7 +19,7 @@ import com.wherecycle.smartrecycle.model.Locations;
 
 import java.util.ArrayList;
 
-public class DBLayoutActivity extends AppCompatActivity {
+public class DBLayoutActivity extends ChildActivity {
     private DatabaseReference myDB;
     //private final ArrayList<Locations> myDBArray = new ArrayList<>();
     private int nEle = 0;
