@@ -1,8 +1,10 @@
 package com.wherecycle.smartrecycle;
-
+/*
+* created by Lorraine
+* This activity will display a scrollable list detailing some of the benefits of recycling*/
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+//extends childActivity as we want a back button
 public class BenefitsIfRecycling extends ChildActivity {
 
     @Override

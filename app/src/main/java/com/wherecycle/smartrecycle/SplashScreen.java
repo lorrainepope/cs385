@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
+/*
+* created by Lorraine
+* This is the splash screen activity. It will display an animated icon that will
+* rotate when the app opens. Also tells the app where to go when the anumation is
+* finsihed (ie the main activity)*/
 public class SplashScreen extends AppCompatActivity {
 
     @Override
