@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--created by Lorraine-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wherecycle.smartrecycle.BenefitsOfRecyclingActivity">
+    <!--This xml file is a scrollable view that holds textviews detailing the benefits of recycling -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_landfill"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_resources"
+                android:textSize="20dp"
+                android:textColor="@color/splashText"
+                android:lines="3"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_energy"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_deforestation"
+                android:textSize="20dp"
+                android:textColor="@color/splashText"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_pollution"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:lines="3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_water"
+                android:textSize="20dp"
+                android:textColor="@color/splashText"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_sustainable"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits_jobs"
+                android:textSize="20dp"
+                android:textColor="@color/splashText"
+                android:lines="2"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
