@@ -29,16 +29,15 @@ import com.wherecycle.smartrecycle.model.RecycleableItem;
 import com.wherecycle.smartrecycle.model.RecycleableType;
 
 import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity
-
-
-        implements NavigationView.OnNavigationItemSelectedListener {
+/*
+* This still extends appCompat instead of child as we do not need a back button here and we want to have the
+* drawer accessible from this screen*/
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "MainActivity";
     private static final int ERROR_DIALOG_REQUEST = 9001;
 
-    MyRecyclerAdapter adapter;
+    MyRecyclerAdapter adapter;//creates the new adapter that we need
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +53,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //set up the recyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mainRecycler);
         RecycleableItem item = new RecycleableItem(RecycleableType.Aluminium);
         RecycleableItem item1 = new RecycleableItem(RecycleableType.Textiles);
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity
         RecycleableItem item6 = new RecycleableItem(RecycleableType.Cardboard);
         RecycleableItem item7 = new RecycleableItem(RecycleableType.Batteries);
         RecycleableItem item8 = new RecycleableItem(RecycleableType.Glass);
+        //create a new arrayList to hold each recyclableItem we have just created
         ArrayList<RecycleableItem> arrayList = new ArrayList<>(8);
         arrayList.add(item);
         arrayList.add(item1);
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity
         arrayList.add(item7);
         arrayList.add(item8);
         recyclerView.setAdapter(new MyRecyclerAdapter(this, arrayList));
+        //set the grid layout so that the items will be displayed properly on screen
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false
         ));
     }

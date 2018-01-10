@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--created by Lorraine-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wherecycle.smartrecycle.NotToRecycle">
+    <!--Displays details of what not to recycle-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <!--TextView sets the max amount of lines to be used for longer pieces of text-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

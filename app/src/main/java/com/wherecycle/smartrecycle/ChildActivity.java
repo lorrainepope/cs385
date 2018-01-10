@@ -8,6 +8,8 @@ import android.view.MenuItem;
 
 /**
  * Created by lorra on 31/12/2017.
+ * This will be the base activity for the majority of our activities and this is where
+ * the action bar back button is set
  */
 
 public class ChildActivity extends AppCompatActivity {

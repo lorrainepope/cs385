@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--We have set the colours for use throughout the app here-->
 <resources>
     <color name="colorPrimary">#8922af</color>
     <color name="colorPrimaryDark">#5f0593</color>
