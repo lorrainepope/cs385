@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wherecycle.smartrecycle.BenefitsIfRecycling">
+    tools:context="com.wherecycle.smartrecycle.BenefitsOfRecyclingActivity">
     <!--This xml file is a scrollable view that holds textviews detailing the benefits of recycling -->
     <ScrollView
         android:layout_width="match_parent"

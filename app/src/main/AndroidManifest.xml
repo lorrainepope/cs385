@@ -62,7 +62,7 @@
         <activity android:name=".usefulLinksActivity" />
         <activity android:name=".recycling_symbols" />
         <activity android:name=".model.MapActivityShowAll" />
-        <activity android:name=".BenefitsIfRecycling" />
+        <activity android:name=".BenefitsOfRecyclingActivity" />
         <activity android:name=".NotToRecycle" />
 
         <!--
