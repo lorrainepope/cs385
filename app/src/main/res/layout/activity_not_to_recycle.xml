@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wherecycle.smartrecycle.NotToRecycle">
+    tools:context="com.wherecycle.smartrecycle.NotToRecycleActivity">
     <!--Displays details of what not to recycle-->
     <ScrollView
         android:layout_width="match_parent"

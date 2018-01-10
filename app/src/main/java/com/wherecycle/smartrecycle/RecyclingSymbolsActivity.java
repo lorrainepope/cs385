@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class recycling_symbols extends ChildActivity implements View.OnClickListener{
+public class RecyclingSymbolsActivity extends ChildActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

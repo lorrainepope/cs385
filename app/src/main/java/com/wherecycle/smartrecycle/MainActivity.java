@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(dbintent);
 
         } else if (id == R.id.bin_comapanies) {
-            Intent binIntent = new Intent(MainActivity.this, binCompanies.class);
+            Intent binIntent = new Intent(MainActivity.this, BinCompaniesActivity.class);
             startActivity(binIntent);
 
         } else if (id == R.id.useful_links) {
@@ -155,11 +155,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(benefitsIntent);
 
         } else if (id == R.id.not_recycle) {
-            Intent notRecycleIntent = new Intent(MainActivity.this, NotToRecycle.class);
+            Intent notRecycleIntent = new Intent(MainActivity.this, NotToRecycleActivity.class);
             startActivity(notRecycleIntent);
 
         } else if (id == R.id.symbols) {
-            Intent symbolIntent = new Intent(MainActivity.this, recycling_symbols.class);
+            Intent symbolIntent = new Intent(MainActivity.this, RecyclingSymbolsActivity.class);
             startActivity(symbolIntent);
 
         } else if (id == R.id.addRecycler) {

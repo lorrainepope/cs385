@@ -5,7 +5,7 @@ package com.wherecycle.smartrecycle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 //extends child activity as we want it to have a back button on the action bar
-public class NotToRecycle extends ChildActivity {
+public class NotToRecycleActivity extends ChildActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

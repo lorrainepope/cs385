@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wherecycle.smartrecycle.binCompanies">
+    tools:context="com.wherecycle.smartrecycle.BinCompaniesActivity">
 <!-- layout for the bin companies activity. Displays text view, link to webpage and customised call button-->
     <ScrollView
         android:layout_width="match_parent"

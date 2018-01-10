@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.wherecycle.smartrecycle.SplashScreen">
+    tools:context="com.wherecycle.smartrecycle.SplashScreenActivity">
     <!--Splash screen will consist of our logo on a purple background and the app name below-->
     <TextView
         android:id="@+id/splashText"
