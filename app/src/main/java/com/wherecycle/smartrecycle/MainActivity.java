@@ -3,22 +3,16 @@ package com.wherecycle.smartrecycle;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -29,16 +23,15 @@ import com.wherecycle.smartrecycle.model.RecycleableItem;
 import com.wherecycle.smartrecycle.model.RecycleableType;
 
 import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity
-
-
-        implements NavigationView.OnNavigationItemSelectedListener {
+/*
+* This still extends appCompat instead of child as we do not need a back button here and we want to have the
+* drawer accessible from this screen*/
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "MainActivity";
     private static final int ERROR_DIALOG_REQUEST = 9001;
 
-    MyRecyclerAdapter adapter;
+    MyRecyclerAdapter adapter;//creates the new adapter that we need
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +47,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //set up the recyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mainRecycler);
         RecycleableItem item = new RecycleableItem(RecycleableType.Aluminium);
         RecycleableItem item1 = new RecycleableItem(RecycleableType.Textiles);
@@ -64,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         RecycleableItem item6 = new RecycleableItem(RecycleableType.Cardboard);
         RecycleableItem item7 = new RecycleableItem(RecycleableType.Batteries);
         RecycleableItem item8 = new RecycleableItem(RecycleableType.Glass);
+        //create a new arrayList to hold each recyclableItem we have just created
         ArrayList<RecycleableItem> arrayList = new ArrayList<>(8);
         arrayList.add(item);
         arrayList.add(item1);
@@ -75,6 +70,7 @@ public class MainActivity extends AppCompatActivity
         arrayList.add(item7);
         arrayList.add(item8);
         recyclerView.setAdapter(new MyRecyclerAdapter(this, arrayList));
+        //set the grid layout so that the items will be displayed properly on screen
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false
         ));
     }
@@ -147,7 +143,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(dbintent);
 
         } else if (id == R.id.bin_comapanies) {
-            Intent binIntent = new Intent(MainActivity.this, binCompanies.class);
+            Intent binIntent = new Intent(MainActivity.this, BinCompaniesActivity.class);
             startActivity(binIntent);
 
         } else if (id == R.id.useful_links) {
@@ -155,15 +151,15 @@ public class MainActivity extends AppCompatActivity
             startActivity(usefulIntent);
 
         } else if (id == R.id.benefits) {
-            Intent benefitsIntent = new Intent(MainActivity.this, BenefitsIfRecycling.class);
+            Intent benefitsIntent = new Intent(MainActivity.this, BenefitsOfRecyclingActivity.class);
             startActivity(benefitsIntent);
 
         } else if (id == R.id.not_recycle) {
-            Intent notRecycleIntent = new Intent(MainActivity.this, NotToRecycle.class);
+            Intent notRecycleIntent = new Intent(MainActivity.this, NotToRecycleActivity.class);
             startActivity(notRecycleIntent);
 
         } else if (id == R.id.symbols) {
-            Intent symbolIntent = new Intent(MainActivity.this, recycling_symbols.class);
+            Intent symbolIntent = new Intent(MainActivity.this, RecyclingSymbolsActivity.class);
             startActivity(symbolIntent);
 
         } else if (id == R.id.addRecycler) {

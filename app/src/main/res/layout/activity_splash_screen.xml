@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Created by Lorraine-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.wherecycle.smartrecycle.SplashScreen">
-
+    tools:context="com.wherecycle.smartrecycle.SplashScreenActivity">
+    <!--Splash screen will consist of our logo on a purple background and the app name below-->
     <TextView
         android:id="@+id/splashText"
         android:layout_width="wrap_content"
