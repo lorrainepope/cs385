@@ -55,7 +55,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
 
         final int recyc;
         sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
-        recyc = sp.getInt("nameKey", Integer.parseInt(null));
+        recyc = sp.getInt("nameKey", -1);
 
 
 
