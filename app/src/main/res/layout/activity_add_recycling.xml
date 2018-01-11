@@ -58,12 +58,104 @@
         android:id="@+id/submitRecycling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Submit "
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkPlas" />
+
+    <CheckBox
+        android:id="@+id/checkAlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Aluminium"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
+
+    <CheckBox
+        android:id="@+id/checkBatt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Batteries"
+        app:layout_constraintStart_toEndOf="@+id/checkAlu"
+        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
+
+    <CheckBox
+        android:id="@+id/checkCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Cardboard"
+        app:layout_constraintStart_toEndOf="@+id/checkBatt"
+        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
+
+    <CheckBox
+        android:id="@+id/checkElec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Electronics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAlu" />
+
+    <CheckBox
+        android:id="@+id/checkFurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Furniture"
+        app:layout_constraintStart_toEndOf="@+id/checkElec"
+        app:layout_constraintTop_toBottomOf="@+id/checkBatt" />
+
+    <CheckBox
+        android:id="@+id/checkGlass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Glass"
+        app:layout_constraintStart_toEndOf="@+id/checkFurn"
+        app:layout_constraintTop_toBottomOf="@+id/checkCard" />
+
+    <CheckBox
+        android:id="@+id/checkMetal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Metal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkElec" />
+
+    <CheckBox
+        android:id="@+id/checkPlas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Plastics"
+        app:layout_constraintStart_toEndOf="@+id/checkMetal"
+        app:layout_constraintTop_toBottomOf="@+id/checkFurn" />
+
+    <CheckBox
+        android:id="@+id/checkTexti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Textiles"
+        app:layout_constraintStart_toEndOf="@+id/checkPlas"
+        app:layout_constraintTop_toBottomOf="@+id/checkGlass" />
 
 </android.support.constraint.ConstraintLayout>
