@@ -31,11 +31,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
 import com.wherecycle.smartrecycle.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyCallback {
     @Override
@@ -43,6 +45,9 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready ");
         mMap = googleMap;
+
+        private DatabaseReference myDB;
+
 
         if (mLocationPermissionGranted) {
             getDeviceLocation();
