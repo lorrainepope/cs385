@@ -1,6 +1,8 @@
 package com.wherecycle.smartrecycle.model;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -20,9 +22,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -31,11 +31,17 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.wherecycle.smartrecycle.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyCallback {
     @Override
@@ -43,6 +49,103 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready ");
         mMap = googleMap;
+
+        SharedPreferences sp;
+        final String fileName = "myFile";
+
+        final int recyc;
+        sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+        recyc = sp.getInt("nameKey", Integer.parseInt(null));
+
+
+
+        DatabaseReference myDB;
+        myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
+        myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                for (DataSnapshot child : children) {
+                    Locations locations = child.getValue(Locations.class);
+                    if (recyc == 0) {
+                 
+                        if (locations.isAlumin()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 7) {
+                   
+                        if (locations.isBatteries()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 6) {
+
+                   
+                        if (locations.isCardboard()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 5) {
+                 
+                        if (locations.isElectronics()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 4) {
+                
+                        if (locations.isFurniture()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 8) {
+
+                 
+                        if (locations.isGlass()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 2) {
+
+                
+                        if (locations.isMetal()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 3) {
+                 
+                        if (locations.isPlastics()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == 1) {
+                 
+                        if (locations.isTextiles()){
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+
+                    else{
+                        LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                        mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         if (mLocationPermissionGranted) {
             getDeviceLocation();
@@ -84,6 +187,9 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         setContentView(R.layout.activity_maps2);
         mSearchText = (EditText) findViewById(R.id.input_search);
         mGps = (ImageView) findViewById(R.id.ic_gps);
+
+
+
 
         getLocationPermission();
 

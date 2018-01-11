@@ -1,6 +1,8 @@
 package com.wherecycle.smartrecycle;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,11 +28,17 @@ public class DBLayoutActivity extends ChildActivity {
     private ListView myDBList;
     private ArrayList<String> myKeys = new ArrayList<>();
     private LocationsAdapter arrayAdapter;
+    SharedPreferences sp;
+    private final String fileName = "myFile";
+    private String recyc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dblayout);
+
+        sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+        recyc = sp.getString("nameKey", null);
 
         myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
         myDBList = (ListView)findViewById(R.id.DBList);
@@ -44,9 +52,36 @@ public class DBLayoutActivity extends ChildActivity {
                 for (DataSnapshot child : children) {
                     Locations locations = child.getValue(Locations.class);
                     nEle++;
-                    myDBArray.add(locations);
-                }
+                    if (recyc == "A") {
+                        if (locations.isAlumin()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "B") {
+                        if (locations.isBatteries()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "C") {
+                        if (locations.isCardboard()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "E") {
+                        if (locations.isElectronics()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "F") {
+                        if (locations.isFurniture()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "G") {
+                        if (locations.isGlass()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "M") {
+                        if (locations.isMetal()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "P") {
+                        if (locations.isPlastics()) {myDBArray.add(locations);}
+                    }
+                    else if (recyc == "T") {
+                        if (locations.isTextiles()) {myDBArray.add(locations);}
+                    }
 
+                    else{myDBArray.add(locations);}
+                }
             }
 
             @Override

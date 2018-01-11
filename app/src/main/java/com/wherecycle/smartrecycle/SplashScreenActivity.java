@@ -1,6 +1,7 @@
 package com.wherecycle.smartrecycle;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -17,6 +18,9 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        //below is the media player that will play a short sound of glass being dropped into a bottle bank
+        final MediaPlayer mp1 = MediaPlayer.create(SplashScreenActivity.this, R.raw.glasssmash);
+        mp1.start();
         final ImageView imageView = (ImageView) findViewById(R.id.splashImage);
         final Animation animation1 = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);
         final Animation animation2 = AnimationUtils.loadAnimation(getBaseContext(),R.anim.antirotate);
