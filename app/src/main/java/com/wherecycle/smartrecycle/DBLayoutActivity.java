@@ -52,31 +52,31 @@ public class DBLayoutActivity extends ChildActivity {
                 for (DataSnapshot child : children) {
                     Locations locations = child.getValue(Locations.class);
                     nEle++;
-                    if (recyc == "A") {
+                    if (recyc == 0) {
                         if (locations.isAlumin()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "B") {
+                    else if (recyc == 7) {
                         if (locations.isBatteries()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "C") {
+                    else if (recyc == 6) {
                         if (locations.isCardboard()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "E") {
+                    else if (recyc == 5) {
                         if (locations.isElectronics()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "F") {
+                    else if (recyc == 4) {
                         if (locations.isFurniture()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "G") {
+                    else if (recyc == 8) {
                         if (locations.isGlass()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "M") {
+                    else if (recyc == 2) {
                         if (locations.isMetal()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "P") {
+                    else if (recyc == 3) {
                         if (locations.isPlastics()) {myDBArray.add(locations);}
                     }
-                    else if (recyc == "T") {
+                    else if (recyc == 1) {
                         if (locations.isTextiles()) {myDBArray.add(locations);}
                     }
 
