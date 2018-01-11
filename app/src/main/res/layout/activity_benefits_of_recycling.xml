@@ -15,42 +15,53 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="8dp">
+            android:paddingLeft="8dp"
+            android:paddingTop="20dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_landfill"
                 android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_resources"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="3"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_energy"
                 android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_deforestation"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_pollution"
                 android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="3"/>
 
             <TextView
@@ -58,21 +69,27 @@
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_water"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_sustainable"
                 android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/benefits_jobs"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
                 android:lines="2"/>
 
 

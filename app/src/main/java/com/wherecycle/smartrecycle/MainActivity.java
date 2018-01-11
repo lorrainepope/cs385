@@ -3,6 +3,7 @@ package com.wherecycle.smartrecycle;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -32,8 +33,6 @@ import java.util.ArrayList;
 * drawer accessible from this screen*/
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = "MainActivity";
-    private static final int ERROR_DIALOG_REQUEST = 9001;
 
     public static interface ClickListener {
         public void onClick(View view, int position);
@@ -41,12 +40,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         public void onLongClick(View view, int position);
     }
 
+
+    private static final String TAG = "MainActivity";
+    private static final int ERROR_DIALOG_REQUEST = 9001;
+    SharedPreferences sp;
+    private final String fileName = "myFile";
     MyRecyclerAdapter adapter;//creates the new adapter that we need
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -91,8 +97,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view, final int position) {
                 //Values are passing to activity & to fragment as well
-                Toast.makeText(MainActivity.this, "Single Click on position        :" + position,
-                        Toast.LENGTH_SHORT).show();
+              
+
+                sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putInt("nameKey", position);
+                editor.apply();
+                Intent intent = new Intent(MainActivity.this, MapActivityShowAll.class);
+                startActivity(intent);
             }
 
             @Override
@@ -219,6 +231,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         private ClickListener clicklistener;
         private GestureDetector gestureDetector;
 
+
         public RecyclerTouchListener(Context context, final RecyclerView recycleView, final ClickListener clicklistener){
 
             this.clicklistener=clicklistener;
@@ -250,6 +263,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         @Override
         public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
 
         }
 

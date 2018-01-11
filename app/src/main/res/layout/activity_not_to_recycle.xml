@@ -23,108 +23,151 @@
                 android:layout_height="wrap_content"
                 android:text="The following items should not be placed in your household recycling bin:"
                 android:textSize="24dp"
-                android:textColor="@color/splashBackground"
+                android:textColor="@color/colorPrimaryDark"
                 android:lines="4"
+                android:paddingLeft="10dp"
                 android:textAllCaps="true"
                 android:paddingBottom="6dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nappies, Sanitary products, baby wipes"
+                android:text="  Nappies, Sanitary products, wipes"
                 android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Food waste"
+                android:text="  Food waste"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
-                android:lines="2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Contaminated Packaging"
-                android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Garden cuttings/Soil"
+                android:text="  Contaminated Packaging"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
-                android:lines="2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Polystyrene(EPS)"
-                android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Liquids/Oils"
+                android:text="  Garden cuttings/Soil"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
-                android:lines="2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Textiles"
-                android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dismantled Furniture"
+                android:text="  Polystyrene(EPS)"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
-                android:lines="2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Medical Waste"
-                android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Glass"
+                android:text="  Liquids/Oils"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
-                android:lines="2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Light Bulbs"
-                android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Electrical(Anything with a plug/battery"
+                android:text="  Textiles"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
-                android:lines="2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Batteries"
-                android:textSize="20dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="General Waste"
+                android:text="  Dismantled Furniture"
                 android:textSize="20dp"
-                android:textColor="@color/splashText"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  Medical Waste"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  Glass"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  Light Bulbs"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  Electrical(Anything with a plug/battery"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  Batteries"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  General Waste"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/border"
+                android:layout_marginRight="10dp"
                 android:lines="2"/>
         </LinearLayout>
 
