@@ -52,9 +52,12 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
 
         SharedPreferences sp;
         final String fileName = "myFile";
+
         final int recyc;
         sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
         recyc = sp.getInt("nameKey", Integer.parseInt(null));
+
+
 
         DatabaseReference myDB;
         myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
@@ -65,54 +68,66 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                 for (DataSnapshot child : children) {
                     Locations locations = child.getValue(Locations.class);
                     if (recyc == 0) {
+                 
                         if (locations.isAlumin()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 7) {
+                   
                         if (locations.isBatteries()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 6) {
+
+                   
                         if (locations.isCardboard()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 5) {
+                 
                         if (locations.isElectronics()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 4) {
+                
                         if (locations.isFurniture()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 8) {
+
+                 
                         if (locations.isGlass()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 2) {
+
+                
                         if (locations.isMetal()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 3) {
+                 
                         if (locations.isPlastics()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
                         }
                     }
                     else if (recyc == 1) {
+                 
                         if (locations.isTextiles()){
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
                             mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
