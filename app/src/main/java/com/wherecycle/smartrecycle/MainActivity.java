@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
+
+
         //editor.putString("nameKey", "A");
         //editor.apply();
 
