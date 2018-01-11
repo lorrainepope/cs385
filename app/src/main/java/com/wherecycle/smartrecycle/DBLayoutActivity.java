@@ -30,7 +30,7 @@ public class DBLayoutActivity extends ChildActivity {
     private LocationsAdapter arrayAdapter;
     SharedPreferences sp;
     private final String fileName = "myFile";
-    private String recyc;
+    private int recyc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class DBLayoutActivity extends ChildActivity {
         setContentView(R.layout.activity_dblayout);
 
         sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
-        recyc = sp.getString("nameKey", null);
+        recyc = sp.getInt("nameKey", -1);
 
         myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
         myDBList = (ListView)findViewById(R.id.DBList);
