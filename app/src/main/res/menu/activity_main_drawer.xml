@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--craeted by Lorraine-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<!--this is the layout for our drawer. It holds all the menu items, including the icon for each. -->
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/bottle_banks"
@@ -36,7 +37,7 @@
             android:icon="@drawable/ic_showall"/>
 
     </group>
-
+    <!--creates a second menu for settings and about options-->
     <item android:title="">
         <menu>
             <item

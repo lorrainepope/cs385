@@ -1,5 +1,9 @@
 package com.wherecycle.smartrecycle;
-
+/*
+* created by Lorraine
+* This activity will show the user the details of bin companies that service their area
+* They will be able to click the link to the website or click the call button to call the company
+* */
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -10,13 +14,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class binCompanies extends ChildActivity implements View.OnClickListener{
+public class BinCompaniesActivity extends ChildActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bin_companies);
         this.setTitle("Bin Companies");
+        //code below sets up the links to the different websites
         TextView thorntons = (TextView) findViewById(R.id.thorntons);
         thorntons.setMovementMethod(LinkMovementMethod.getInstance());
         TextView panda = (TextView) findViewById(R.id.panda);
@@ -25,6 +30,7 @@ public class binCompanies extends ChildActivity implements View.OnClickListener{
         citybin.setMovementMethod(LinkMovementMethod.getInstance());
         TextView greyhound = (TextView) findViewById(R.id.greyhound);
         greyhound.setMovementMethod(LinkMovementMethod.getInstance());
+        //code below sets up the call buttons
         Button callThorntons = (Button) findViewById(R.id.callThorntons);
         callThorntons.setOnClickListener(this);
         Button callPanda = (Button) findViewById(R.id.callPanda);
@@ -36,6 +42,9 @@ public class binCompanies extends ChildActivity implements View.OnClickListener{
     }
 
     @Override
+    /*using a switch statement to determine which number to call depending on the choice. Each intent is set to
+    *move to the dialer when the call button is clicked. I chose to go to dialer rather than call directly as
+    *the user may prefer to save the number in phonebook rather than call straight away*/
     public void onClick(View v) {
         switch (v.getId()){
             case (R.id.callThorntons):

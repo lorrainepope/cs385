@@ -1,9 +1,11 @@
 package com.wherecycle.smartrecycle;
-
+/*
+* created by Lorraine
+* This activity simply displays information on what is not accepted in a household recycling bin*/
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-public class NotToRecycle extends ChildActivity {
+//extends child activity as we want it to have a back button on the action bar
+public class NotToRecycleActivity extends ChildActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,13 +6,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.wherecycle.smartrecycle.R;
 import com.wherecycle.smartrecycle.model.RecycleableItem;
 import com.wherecycle.smartrecycle.model.RecycleableType;
 
 import java.util.List;
-
+/*
+* created by Lorraine
+* This class creates the required viewholder and binds the viewholder to the data from the
+* recyclableItem class*/
 public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclableItemViewHolder> {
 
     private final Context _context;
@@ -22,7 +26,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclableItemViewHo
         _context = context;
         _items = items;
     }
-
+    //layout inflater turns the xml file into the view object
     @Override
     public RecyclableItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(_context);
@@ -64,4 +68,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclableItemViewHo
     public int getItemCount() {
         return _items.size();
     }
+
+
 }
