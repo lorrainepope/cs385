@@ -1,6 +1,8 @@
 package com.wherecycle.smartrecycle.model;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -29,11 +31,17 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.wherecycle.smartrecycle.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyCallback {
     @Override
@@ -41,6 +49,88 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready ");
         mMap = googleMap;
+
+        SharedPreferences sp;
+        final String fileName = "myFile";
+        final String recyc;
+        sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+        recyc = sp.getString("nameKey", null);
+
+        DatabaseReference myDB;
+        myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
+        myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                for (DataSnapshot child : children) {
+                    Locations locations = child.getValue(Locations.class);
+                    if (recyc == "A") {
+                        if (locations.isAlumin()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "B") {
+                        if (locations.isBatteries()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "C") {
+                        if (locations.isCardboard()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "E") {
+                        if (locations.isElectronics()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "F") {
+                        if (locations.isFurniture()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "G") {
+                        if (locations.isGlass()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "M") {
+                        if (locations.isMetal()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "P") {
+                        if (locations.isPlastics()) {
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+                    else if (recyc == "T") {
+                        if (locations.isTextiles()){
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                        }
+                    }
+
+                    else{
+                        LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
+                        mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         if (mLocationPermissionGranted) {
             getDeviceLocation();
