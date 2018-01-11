@@ -97,8 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view, final int position) {
                 //Values are passing to activity & to fragment as well
-                Toast.makeText(MainActivity.this, "Single Click on position        :" + position,
-                        Toast.LENGTH_SHORT).show();
+              
 
                 sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
