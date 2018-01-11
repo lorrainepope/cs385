@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 editor.putInt("nameKey", position);
                 editor.apply();
                 Intent intent = new Intent(MainActivity.this, MapActivityShowAll.class);
+                startActivity(intent);
             }
 
             @Override
