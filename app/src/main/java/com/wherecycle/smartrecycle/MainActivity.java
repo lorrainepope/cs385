@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity
 
         sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        //editor.putString("nameKey", "A");
-        //editor.apply();
+        editor.putString("nameKey", "A");
+        editor.apply();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
