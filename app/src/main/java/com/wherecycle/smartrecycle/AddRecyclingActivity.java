@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +21,15 @@ public class AddRecyclingActivity extends ChildActivity {
     private EditText eLat;
     private EditText eLong;
     private Button submit;
+    private CheckBox eAlu;
+    private CheckBox eBatt;
+    private CheckBox eCard;
+    private CheckBox eElec;
+    private CheckBox eFurn;
+    private CheckBox eGlass;
+    private CheckBox eMetal;
+    private CheckBox ePlast;
+    private CheckBox eText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,15 @@ public class AddRecyclingActivity extends ChildActivity {
         eContact = (EditText)findViewById(R.id.enterRContact);
         eLat = (EditText)findViewById(R.id.enterRLat);
         eLong = (EditText)findViewById(R.id.enterRLong);
+        eAlu = (CheckBox) findViewById(R.id.checkAlu);
+        eBatt = (CheckBox) findViewById(R.id.checkBatt);
+        eCard = (CheckBox) findViewById(R.id.checkCard);
+        eElec = (CheckBox) findViewById(R.id.checkElec);
+        eFurn = (CheckBox) findViewById(R.id.checkFurn);
+        eGlass = (CheckBox) findViewById(R.id.checkGlass);
+        eMetal = (CheckBox) findViewById(R.id.checkMetal);
+        ePlast = (CheckBox) findViewById(R.id.checkPlas);
+        eText = (CheckBox) findViewById(R.id.checkTexti);
 
         submit = (Button)findViewById(R.id.submitRecycling);
         submit.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +63,17 @@ public class AddRecyclingActivity extends ChildActivity {
                 double DBLat = Double.parseDouble(strLat);
                 String strLong = eLong.getText().toString();
                 double DBLong = Double.parseDouble(strLong);
+                boolean DBAlu = eAlu.isChecked();
+                boolean DBBatt = eBatt.isChecked();
+                boolean DBCard = eCard.isChecked();
+                boolean DBElec = eElec.isChecked();
+                boolean DBFurn = eFurn.isChecked();
+                boolean DBGlass = eGlass.isChecked();
+                boolean DBMetal = eMetal.isChecked();
+                boolean DBPlast = ePlast.isChecked();
+                boolean DBText = eText.isChecked();
 
-                Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBContact);
+                Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBContact, DBAlu, DBBatt, DBCard, DBElec, DBFurn, DBGlass, DBMetal, DBPlast, DBText);
                 myDB.child("Recycling Centres").push().setValue(newRecycler);
 
                 Intent intent = new Intent(AddRecyclingActivity.this, DBLayoutActivity.class);
