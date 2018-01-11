@@ -33,8 +33,6 @@ import java.util.ArrayList;
 * drawer accessible from this screen*/
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = "MainActivity";
-    private static final int ERROR_DIALOG_REQUEST = 9001;
 
     public static interface ClickListener {
         public void onClick(View view, int position);
@@ -54,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
         //editor.putString("nameKey", "A");
         //editor.apply();
 
@@ -105,6 +101,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //Values are passing to activity & to fragment as well
                 Toast.makeText(MainActivity.this, "Single Click on position        :" + position,
                         Toast.LENGTH_SHORT).show();
+
+                sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putInt("nameKey", position);
+                editor.apply();
+                Intent intent = new Intent(MainActivity.this, MapActivityShowAll.class);
             }
 
             @Override
@@ -231,6 +233,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         private ClickListener clicklistener;
         private GestureDetector gestureDetector;
 
+
         public RecyclerTouchListener(Context context, final RecyclerView recycleView, final ClickListener clicklistener){
 
             this.clicklistener=clicklistener;
@@ -262,6 +265,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         @Override
         public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
 
         }
 
