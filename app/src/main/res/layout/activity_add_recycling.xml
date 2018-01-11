@@ -61,13 +61,15 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Submit "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkPlas" />
 
-    <RadioButton
-        android:id="@+id/radioAlum"
+    <CheckBox
+        android:id="@+id/checkAlu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -76,93 +78,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
 
-    <RadioButton
-        android:id="@+id/radioText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
-        android:text="Textiles"
-        app:layout_constraintEnd_toStartOf="@+id/radioMetal"
-        app:layout_constraintStart_toEndOf="@+id/radioAlum"
-        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
-
-    <RadioButton
-        android:id="@+id/radioMetal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Scrap Metal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioText"
-        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
-
-    <RadioButton
-        android:id="@+id/radioPlastics"
+    <CheckBox
+        android:id="@+id/checkBatt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Plastics"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioAlum" />
+        android:text="Batteries"
+        app:layout_constraintStart_toEndOf="@+id/checkAlu"
+        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
 
-    <RadioButton
-        android:id="@+id/radioElect"
+    <CheckBox
+        android:id="@+id/checkCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Cardboard"
+        app:layout_constraintStart_toEndOf="@+id/checkBatt"
+        app:layout_constraintTop_toBottomOf="@+id/enterRLong" />
+
+    <CheckBox
+        android:id="@+id/checkElec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Electronics"
-        app:layout_constraintEnd_toStartOf="@+id/radioCard"
-        app:layout_constraintStart_toEndOf="@+id/radioPlastics"
-        app:layout_constraintTop_toBottomOf="@+id/radioText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAlu" />
 
-    <RadioButton
-        android:id="@+id/radioCard"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Cardboard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioMetal" />
-
-    <RadioButton
-        android:id="@+id/radioFurn"
+    <CheckBox
+        android:id="@+id/checkFurn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Furniture"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioPlastics" />
+        app:layout_constraintStart_toEndOf="@+id/checkElec"
+        app:layout_constraintTop_toBottomOf="@+id/checkBatt" />
 
-    <RadioButton
-        android:id="@+id/radioBatt"
+    <CheckBox
+        android:id="@+id/checkGlass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Batteries"
-        app:layout_constraintEnd_toStartOf="@+id/radioGlass"
-        app:layout_constraintHorizontal_bias="0.284"
-        app:layout_constraintStart_toEndOf="@+id/radioFurn"
-        app:layout_constraintTop_toBottomOf="@+id/radioElect" />
+        android:text="Glass"
+        app:layout_constraintStart_toEndOf="@+id/checkFurn"
+        app:layout_constraintTop_toBottomOf="@+id/checkCard" />
 
-    <RadioButton
-        android:id="@+id/radioGlass"
+    <CheckBox
+        android:id="@+id/checkMetal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="68dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Glass"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioCard" />
+        android:text="Metal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkElec" />
+
+    <CheckBox
+        android:id="@+id/checkPlas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Plastics"
+        app:layout_constraintStart_toEndOf="@+id/checkMetal"
+        app:layout_constraintTop_toBottomOf="@+id/checkFurn" />
+
+    <CheckBox
+        android:id="@+id/checkTexti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Textiles"
+        app:layout_constraintStart_toEndOf="@+id/checkPlas"
+        app:layout_constraintTop_toBottomOf="@+id/checkGlass" />
 
 </android.support.constraint.ConstraintLayout>

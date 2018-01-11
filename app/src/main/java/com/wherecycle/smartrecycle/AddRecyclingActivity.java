@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,15 +21,15 @@ public class AddRecyclingActivity extends ChildActivity {
     private EditText eLat;
     private EditText eLong;
     private Button submit;
-    private RadioButton eAlu;
-    private RadioButton eBatt;
-    private RadioButton eCard;
-    private RadioButton eElec;
-    private RadioButton eFurn;
-    private RadioButton eGlass;
-    private RadioButton eMetal;
-    private RadioButton ePlast;
-    private RadioButton eText;
+    private CheckBox eAlu;
+    private CheckBox eBatt;
+    private CheckBox eCard;
+    private CheckBox eElec;
+    private CheckBox eFurn;
+    private CheckBox eGlass;
+    private CheckBox eMetal;
+    private CheckBox ePlast;
+    private CheckBox eText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +43,15 @@ public class AddRecyclingActivity extends ChildActivity {
         eContact = (EditText)findViewById(R.id.enterRContact);
         eLat = (EditText)findViewById(R.id.enterRLat);
         eLong = (EditText)findViewById(R.id.enterRLong);
-        eAlu = (RadioButton)findViewById(R.id.radioAlum);
-        eBatt = (RadioButton)findViewById(R.id.radioBatt);
-        eCard = (RadioButton)findViewById(R.id.radioCard);
-        eElec = (RadioButton)findViewById(R.id.radioElect);
-        eFurn = (RadioButton)findViewById(R.id.radioFurn);
-        eGlass = (RadioButton)findViewById(R.id.radioGlass);
-        eMetal = (RadioButton)findViewById(R.id.radioMetal);
-        ePlast = (RadioButton)findViewById(R.id.radioPlastics);
-        eText = (RadioButton)findViewById(R.id.radioText);
+        eAlu = (CheckBox) findViewById(R.id.checkAlu);
+        eBatt = (CheckBox) findViewById(R.id.checkBatt);
+        eCard = (CheckBox) findViewById(R.id.checkCard);
+        eElec = (CheckBox) findViewById(R.id.checkElec);
+        eFurn = (CheckBox) findViewById(R.id.checkFurn);
+        eGlass = (CheckBox) findViewById(R.id.checkGlass);
+        eMetal = (CheckBox) findViewById(R.id.checkMetal);
+        ePlast = (CheckBox) findViewById(R.id.checkPlas);
+        eText = (CheckBox) findViewById(R.id.checkTexti);
 
         submit = (Button)findViewById(R.id.submitRecycling);
         submit.setOnClickListener(new View.OnClickListener() {

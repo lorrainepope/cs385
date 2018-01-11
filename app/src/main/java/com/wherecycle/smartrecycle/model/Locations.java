@@ -62,7 +62,7 @@ public class Locations {
         return lng;
     }
 
-    public String getAddress(){
+    public String getEmail(){
         return email;
     }
 
