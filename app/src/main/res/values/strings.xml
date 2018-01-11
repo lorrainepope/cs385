@@ -43,4 +43,6 @@
     <string name="citybinWeb"><a href="https://www.citybin.com/cms/">Visit Website</a></string>
     <string name="greyhound">\nGreyhound Household Recycling \n1890 989 998</string>
     <string name="greyhoundWeb"><a href="https://greyhound.ie">Visit Website</a></string>
+    <string name="about_header">This application was brought to you by:</string>
+    <string name="about_names">Lorraine McGonigle \nJames Basquill \nShaunagh McGee \nClaudine Callaghan</string>
 </resources>
