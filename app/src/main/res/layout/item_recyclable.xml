@@ -15,7 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@id/titleText"
-        tools:src="@drawable/batteries" />
+        tools:src="@drawable/batteries"
+        android:clickable="true" />
 
     <TextView
         android:id="@+id/titleText"
