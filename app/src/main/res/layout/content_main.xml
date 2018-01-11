@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--created by Lorraine-->
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.wherecycle.smartrecycle.MainActivity"
     tools:showIn="@layout/app_bar_main">
-
+    <!--Displayed as a header at the top of the screen-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="266dp"
@@ -22,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.017" />
-
+    <!--sets the positioning of the recyclerView on the screen-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mainRecycler"
         android:layout_width="match_parent"

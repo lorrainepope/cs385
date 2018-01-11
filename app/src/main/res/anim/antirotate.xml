@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--created by Lorraine. This is the antirotate xml for the splash screen. Sets pivot, duration etc-->
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <rotate
         android:fromDegrees="0"

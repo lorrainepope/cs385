@@ -17,6 +17,7 @@
     <string name="header">What would you like to recycle?</string>
     <string name="aluminium_cans">Aluminium Cans</string>
     <string name="glass_bottles">Glass Bottles</string>
+    <!--The strings below hold the web address that the app will navigate to-->
     <string name="RepakString"><a href="https://www.repak.ie">Repak</a></string>
     <string name="EPAString"><a href="https://www.epa.ie">EPA</a></string>
     <string name="Citizens"><a href="http://www.citizensinformation.ie">Citizens Information</a></string>
@@ -34,6 +35,7 @@
     <string name="benefits_sustainable">Ensures a sustainable future</string>
     <string name="benefits_jobs">Creates jobs in the recycling industry</string>
     <string name="thorntons">Thornton\'s Recycling \n(01)623 5133</string>
+    <!--strings below hold the details for bin companies and a separate string with each web address-->
     <string name="thorntonsWeb"><a href="https://www.thorntons-recycling.ie">Visit Website</a></string>
     <string name="panda">\nPanda Waste Management \n1890 626 262</string>
     <string name="pandaWeb"><a href="https://www.panda.ie">Visit Website</a></string>
@@ -41,4 +43,6 @@
     <string name="citybinWeb"><a href="https://www.citybin.com/cms/">Visit Website</a></string>
     <string name="greyhound">\nGreyhound Household Recycling \n1890 989 998</string>
     <string name="greyhoundWeb"><a href="https://greyhound.ie">Visit Website</a></string>
+    <string name="about_header">This application was brought to you by:</string>
+    <string name="about_names">Lorraine McGonigle \nJames Basquill \nShaunagh McGee \nClaudine Callaghan</string>
 </resources>
