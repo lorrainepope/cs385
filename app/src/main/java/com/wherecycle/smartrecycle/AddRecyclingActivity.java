@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -76,8 +77,21 @@ public class AddRecyclingActivity extends ChildActivity {
                 Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBPhone, DBEmail, DBAlu, DBBatt, DBCard, DBElec, DBFurn, DBGlass, DBMetal, DBPlast, DBText);
                 myDB.child("Recycling Centres").push().setValue(newRecycler);
 
-                Intent intent = new Intent(AddRecyclingActivity.this, DBLayoutActivity.class);
-                startActivity(intent);
+                Toast.makeText(AddRecyclingActivity.this, "Database has been updated.", Toast.LENGTH_SHORT).show();
+                eName.setText("");
+                eEmail.setText("");
+                ePhone.setText("");
+                eLat.setText("");
+                eLong.setText("");
+                if(eAlu.isChecked()){eAlu.setChecked(false);}
+                if(eBatt.isChecked()){eBatt.setChecked(false);}
+                if(eCard.isChecked()){eCard.setChecked(false);}
+                if(eElec.isChecked()){eElec.setChecked(false);}
+                if(eFurn.isChecked()){eFurn.setChecked(false);}
+                if(eGlass.isChecked()){eGlass.setChecked(false);}
+                if(eMetal.isChecked()){eMetal.setChecked(false);}
+                if(ePlast.isChecked()){ePlast.setChecked(false);}
+                if(eText.isChecked()){eText.setChecked(false);}
             }
         });
     }
