@@ -1,7 +1,6 @@
 package com.wherecycle.smartrecycle;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +11,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.wherecycle.smartrecycle.model.Locations;
 
-import javax.microedition.khronos.egl.EGLDisplay;
-
 public class AddRecyclingActivity extends ChildActivity {
     private DatabaseReference myDB;
     private EditText eName;
-    private EditText eContact;
+    private EditText eEmail;
+    private EditText ePhone;
     private EditText eLat;
     private EditText eLong;
     private Button submit;
@@ -40,7 +38,8 @@ public class AddRecyclingActivity extends ChildActivity {
 
 
         eName = (EditText)findViewById(R.id.enterRName);
-        eContact = (EditText)findViewById(R.id.enterRContact);
+        eEmail = (EditText)findViewById(R.id.enterREmail);
+        ePhone = (EditText)findViewById(R.id.enterRPhone);
         eLat = (EditText)findViewById(R.id.enterRLat);
         eLong = (EditText)findViewById(R.id.enterRLong);
         eAlu = (CheckBox) findViewById(R.id.checkAlu);
@@ -58,7 +57,8 @@ public class AddRecyclingActivity extends ChildActivity {
             @Override
             public void onClick(View view) {
                 String DBName = eName.getText().toString();
-                String DBContact = eContact.getText().toString();
+                String DBEmail = eEmail.getText().toString();
+                String DBPhone = ePhone.getText().toString();
                 String strLat = eLat.getText().toString();
                 double DBLat = Double.parseDouble(strLat);
                 String strLong = eLong.getText().toString();
@@ -73,7 +73,7 @@ public class AddRecyclingActivity extends ChildActivity {
                 boolean DBPlast = ePlast.isChecked();
                 boolean DBText = eText.isChecked();
 
-                Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBContact, DBAlu, DBBatt, DBCard, DBElec, DBFurn, DBGlass, DBMetal, DBPlast, DBText);
+                Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBPhone, DBEmail, DBAlu, DBBatt, DBCard, DBElec, DBFurn, DBGlass, DBMetal, DBPlast, DBText);
                 myDB.child("Recycling Centres").push().setValue(newRecycler);
 
                 Intent intent = new Intent(AddRecyclingActivity.this, DBLayoutActivity.class);

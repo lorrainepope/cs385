@@ -8,6 +8,7 @@ public class Locations {
     private String name;        //Edited by James 2017-12-11
     private double lat;
     private double lng;
+    private String phone;
     private String email;
     private boolean alumin;
     private boolean batteries;
@@ -23,10 +24,11 @@ public class Locations {
 
     }
 
-    public Locations(String name, double lat, double lng, String email, boolean a, boolean b, boolean c, boolean e, boolean f, boolean g, boolean m, boolean p, boolean t){        //Edited by James 2017-12-11
+    public Locations(String name, double lat, double lng, String phone, String email, boolean a, boolean b, boolean c, boolean e, boolean f, boolean g, boolean m, boolean p, boolean t){        //Edited by James 2017-12-11
         this.name = name;                       //Edited by James 2017-12-11
         this.lat = lat;
         this.lng = lng;
+        this.phone = phone;
         this.email = email;
         this.alumin = a;
         this.batteries = b;
@@ -61,6 +63,8 @@ public class Locations {
     public double getLng(){
         return lng;
     }
+
+    public String getPhone() {return phone;}
 
     public String getEmail(){
         return email;
