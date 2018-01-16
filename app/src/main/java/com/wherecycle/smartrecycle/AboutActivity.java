@@ -1,9 +1,9 @@
 package com.wherecycle.smartrecycle;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class AboutActivity extends ChildActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -11,5 +11,10 @@ public class AboutActivity extends ChildActivity {
         setContentView(R.layout.activity_about);
 
 
+
+
+
+
+    
     }
 }

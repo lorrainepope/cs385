@@ -79,7 +79,10 @@
 
         <activity android:name=".BinCompaniesActivity" />
         <activity android:name=".ChildActivity" />
-        <activity android:name=".AboutActivity" />
+
+        <activity android:name=".AboutActivity"></activity>
+
+
     </application>
 
 </manifest>
