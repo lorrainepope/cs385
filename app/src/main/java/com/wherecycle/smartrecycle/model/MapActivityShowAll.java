@@ -50,7 +50,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         Log.d(TAG, "onMapReady: map is ready ");
         mMap = googleMap;
 
-        SharedPreferences sp;
+        final SharedPreferences sp;
         final String fileName = "myFile";
 
         final int recyc;
@@ -139,6 +139,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                         mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
                     }
                 }
+                sp.edit().clear().commit();//resets the map to show all markers
             }
 
             @Override
