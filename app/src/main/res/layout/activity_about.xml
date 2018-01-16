@@ -9,12 +9,12 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="419dp"
-        android:layout_height="510dp"
+        android:layout_width="417dp"
+        android:layout_height="559dp"
         android:background="@drawable/bottles_about"
-        android:scaleType="matrix"
 
-        tools:layout_editor_absoluteX="2dp" />
+        android:scaleType="matrix"
+        tools:layout_editor_absoluteX="4dp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -61,7 +61,7 @@
     <LinearLayout
         android:layout_width="386dp"
         android:layout_height="532dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="52dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
