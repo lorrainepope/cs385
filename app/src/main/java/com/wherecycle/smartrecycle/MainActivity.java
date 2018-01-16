@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view, final int position) {
                 //Values are passing to activity & to fragment as well
-              
+
 
                 sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onLongClick(View view, int position) {
-                Toast.makeText(MainActivity.this, "Long press on position :" + position,
-                        Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "Long press on position :" + position,
+                        //Toast.LENGTH_LONG).show();
             }
 
         }));
