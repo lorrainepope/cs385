@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -44,6 +46,29 @@ import java.util.List;
 
 
 public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyCallback {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; goto parent activity.
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ActionBar ab = getSupportActionBar();
+        if(ab!=null){
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
