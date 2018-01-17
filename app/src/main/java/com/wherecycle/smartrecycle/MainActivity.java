@@ -206,6 +206,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent addIntent = new Intent(MainActivity.this, AddRecyclingActivity.class);
             startActivity(addIntent);
 
+        } else if (id == R.id.selectBinDay) {
+            Intent addIntent = new Intent(MainActivity.this, SelectBinDayActivity.class);
+            startActivity(addIntent);
+
         } else if (id == R.id.settings) {
 
         }else if (id == R.id.about) {
