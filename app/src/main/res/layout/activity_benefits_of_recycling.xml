@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingRight="10dp"
     tools:context="com.wherecycle.smartrecycle.BenefitsOfRecyclingActivity">
     <!--This xml file is a scrollable view that holds textviews detailing the benefits of recycling -->
     <ScrollView
@@ -24,6 +25,7 @@
                 android:text="@string/benefits_landfill"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="2"/>
@@ -33,6 +35,8 @@
                 android:text="@string/benefits_resources"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="3"/>
@@ -42,6 +46,8 @@
                 android:text="@string/benefits_energy"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="2"/>
@@ -51,6 +57,8 @@
                 android:text="@string/benefits_deforestation"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="2"/>
@@ -60,6 +68,8 @@
                 android:text="@string/benefits_pollution"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="3"/>
@@ -70,6 +80,8 @@
                 android:text="@string/benefits_water"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="2"/>
@@ -79,6 +91,8 @@
                 android:text="@string/benefits_sustainable"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="2"/>
@@ -88,6 +102,9 @@
                 android:text="@string/benefits_jobs"
                 android:textSize="20dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:background="@drawable/border"
                 android:lines="2"/>
