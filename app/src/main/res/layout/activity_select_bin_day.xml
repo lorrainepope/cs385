@@ -7,27 +7,25 @@
     tools:context="com.wherecycle.smartrecycle.SelectBinDayActivity">
 
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="hi" />
-
     <DatePicker
         android:id="@+id/datePicker"
         android:layout_width="356dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="62dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/selectButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:onClick="onDateSelectedButtonClick"
-        android:text="Select this date" />
+        android:text="Select your next bin collection day"
+        app:layout_constraintBottom_toTopOf="@+id/datePicker" />
 
 
 </android.support.constraint.ConstraintLayout>

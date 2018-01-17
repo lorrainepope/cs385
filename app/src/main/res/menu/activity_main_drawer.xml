@@ -33,7 +33,7 @@
             android:icon="@drawable/ic_add"/>
         <item
             android:id="@+id/selectBinDay"
-            android:title="Set Reminder for Bin Collection Day"
+            android:title="Set Bin Day Reminder"
             android:icon="@drawable/ic_add"/>
         <item
             android:id="@+id/showall"

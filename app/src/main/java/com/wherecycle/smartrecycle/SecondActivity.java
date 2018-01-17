@@ -2,7 +2,6 @@ package com.wherecycle.smartrecycle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.wherecycle.smartrecycle.R;
 
 public class SecondActivity extends AppCompatActivity {
 

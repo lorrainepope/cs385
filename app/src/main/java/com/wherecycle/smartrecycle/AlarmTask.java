@@ -1,16 +1,11 @@
+//referenced from http://blog.blundellapps.co.uk/notification-for-a-user-chosen-time/
+
 package com.wherecycle.smartrecycle;
 import java.util.Calendar;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-
-import com.wherecycle.smartrecycle.NotifyService;
-
-/**
- * Created by Kitty on 17/01/2018.
- */
 
 public class AlarmTask implements Runnable{
     // The date selected for the alarm

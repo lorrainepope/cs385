@@ -1,3 +1,5 @@
+// referenced from http://blog.blundellapps.co.uk/notification-for-a-user-chosen-time/
+
 package com.wherecycle.smartrecycle;
 
 import android.app.Service;
@@ -5,19 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.IBinder;
-//import android.R;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
-import android.content.Intent;
 import android.os.Binder;
-import android.os.IBinder;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
-
-import com.wherecycle.smartrecycle.SecondActivity;
-import com.wherecycle.smartrecycle.R;
 
 
 public class NotifyService extends Service {

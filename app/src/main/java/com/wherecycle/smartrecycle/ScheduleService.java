@@ -1,19 +1,13 @@
+// referenced from http://blog.blundellapps.co.uk/notification-for-a-user-chosen-time/
+
 package com.wherecycle.smartrecycle;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-
 import java.util.Calendar;
-
-import android.app.Service;
-import android.content.Intent;
 import android.os.Binder;
-import android.os.IBinder;
 import android.util.Log;
-
-import com.wherecycle.smartrecycle.AlarmTask;
-
 
 public class ScheduleService extends Service {
     /**
