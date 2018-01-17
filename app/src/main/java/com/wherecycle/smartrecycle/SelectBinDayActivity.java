@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 import java.util.Calendar;
-
-public class SelectBinDayActivity extends AppCompatActivity {
+//Extending child activity so that we have a back button on action bar
+public class SelectBinDayActivity extends ChildActivity {
     // This is a handle so that we can call methods on our service
     private ScheduleClient scheduleClient;
     // This is the date picker used to select the date for our notification
