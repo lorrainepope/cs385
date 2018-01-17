@@ -64,6 +64,17 @@
         <activity android:name=".model.MapActivityShowAll" />
         <activity android:name=".BenefitsOfRecyclingActivity" />
         <activity android:name=".NotToRecycleActivity" />
+        <activity android:name=".SelectBinDayActivity" />
+        <activity android:name=".SecondActivity" />
+
+        <service
+            android:name=".ScheduleService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".NotifyService"
+            android:enabled="true"
+            android:exported="true" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -79,10 +90,7 @@
 
         <activity android:name=".BinCompaniesActivity" />
         <activity android:name=".ChildActivity" />
-
-        <activity android:name=".AboutActivity"></activity>
-
-
+        <activity android:name=".AboutActivity" />
     </application>
 
 </manifest>

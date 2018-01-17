@@ -32,6 +32,10 @@
             android:title="Add Recycling Centre"
             android:icon="@drawable/ic_add"/>
         <item
+            android:id="@+id/selectBinDay"
+            android:title="Set Bin Day Reminder"
+            android:icon="@drawable/ic_add"/>
+        <item
             android:id="@+id/showall"
             android:title="Show All Recycling Facilities"
             android:icon="@drawable/ic_showall"/>
