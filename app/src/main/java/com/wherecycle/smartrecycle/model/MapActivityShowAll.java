@@ -60,7 +60,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
 
 
         DatabaseReference myDB;
-        myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
+        myDB = FirebaseDatabase.getInstance().getReference(); 
         myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
