@@ -52,33 +52,23 @@ public class DBLayoutActivity extends ChildActivity {
                     Locations locations = child.getValue(Locations.class);
                     if (recyc == 0) {
                         if (locations.isAlumin()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 7) {
+                    } else if (recyc == 7) {
                         if (locations.isBatteries()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 6) {
+                    } else if (recyc == 6) {
                         if (locations.isCardboard()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 5) {
+                    } else if (recyc == 5) {
                         if (locations.isElectronics()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 4) {
+                    } else if (recyc == 4) {
                         if (locations.isFurniture()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 8) {
+                    } else if (recyc == 8) {
                         if (locations.isGlass()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 2) {
+                    } else if (recyc == 2) {
                         if (locations.isMetal()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 3) {
+                    } else if (recyc == 3) {
                         if (locations.isPlastics()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 1) {
+                    } else if (recyc == 1) {
                         if (locations.isTextiles()) {myDBArray.add(locations);}
-                    }
-
-                    else{myDBArray.add(locations);}
+                    } else{myDBArray.add(locations);}
                 }
             }
 
