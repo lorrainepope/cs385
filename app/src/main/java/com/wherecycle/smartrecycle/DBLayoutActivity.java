@@ -50,7 +50,9 @@ public class DBLayoutActivity extends ChildActivity {
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 for (DataSnapshot child : children) {
                     Locations locations = child.getValue(Locations.class);
-                    if (recyc == 0) {
+                    myDBArray.add(locations);
+
+                    /*if (recyc == 0) {
                         if (locations.isAlumin()) {myDBArray.add(locations);}
                     } else if (recyc == 7) {
                         if (locations.isBatteries()) {myDBArray.add(locations);}
@@ -68,7 +70,7 @@ public class DBLayoutActivity extends ChildActivity {
                         if (locations.isPlastics()) {myDBArray.add(locations);}
                     } else if (recyc == 1) {
                         if (locations.isTextiles()) {myDBArray.add(locations);}
-                    } else{myDBArray.add(locations);}
+                    } else{myDBArray.add(locations);}*/
                 }
             }
 
