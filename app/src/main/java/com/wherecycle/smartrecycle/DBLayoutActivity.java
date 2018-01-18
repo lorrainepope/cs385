@@ -45,13 +45,13 @@ public class DBLayoutActivity extends ChildActivity {
         final ArrayList<Locations> myDBArray = new ArrayList<>();
 
 
+
         myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 for (DataSnapshot child : children) {
                     Locations locations = child.getValue(Locations.class);
-                    nEle++;
                     if (recyc == 0) {
                         if (locations.isAlumin()) {myDBArray.add(locations);}
                     }
