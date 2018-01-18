@@ -23,11 +23,9 @@ import java.util.ArrayList;
 
 public class DBLayoutActivity extends ChildActivity {
     private DatabaseReference myDB;
-    //private final ArrayList<Locations> myDBArray = new ArrayList<>();
-    private int nEle = 0;
     private ListView myDBList;
-    private ArrayList<String> myKeys = new ArrayList<>();
     private LocationsAdapter arrayAdapter;
+
     SharedPreferences sp;
     private final String fileName = "myFile";
     private int recyc;
@@ -40,7 +38,7 @@ public class DBLayoutActivity extends ChildActivity {
         sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
         recyc = sp.getInt("nameKey", -1);
 
-        myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
+        myDB = FirebaseDatabase.getInstance().getReference();
         myDBList = (ListView)findViewById(R.id.DBList);
         final ArrayList<Locations> myDBArray = new ArrayList<>();
 
