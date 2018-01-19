@@ -33,19 +33,19 @@ public class DBLayoutActivity extends ChildActivity {
         setContentView(R.layout.activity_dblayout);
 
 
-        myDB = FirebaseDatabase.getInstance().getReference();
-        myDBList = (ListView)findViewById(R.id.DBList);
-        final ArrayList<Locations> myDBArray = new ArrayList<>();
+        myDB = FirebaseDatabase.getInstance().getReference();                                       //instaniate the database at ROOT
+        myDBList = (ListView)findViewById(R.id.DBList);                                             //instantiate the listview
+        final ArrayList<Locations> myDBArray = new ArrayList<>();                                   //instantiate the object array
 
 
 
-        myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
+        myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {            //this method allow us to read data from the database, ROOT->Recycling Centres
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-                for (DataSnapshot child : children) {
-                    Locations locations = child.getValue(Locations.class);
-                    myDBArray.add(locations);
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();                       //iterable object gives us a snapshot of the children of the database, ROOT->Recycling Centres->LocationObject0
+                for (DataSnapshot child : children) {                                                                                                                                           //->LocationObject1
+                    Locations locations = child.getValue(Locations.class);                          //here we assign the current Location to a variable                                         //->LocationObject2
+                    myDBArray.add(locations);                                                       //so we can add it to the object array                                                      //->etc, etc, ...
                 }
             }
 

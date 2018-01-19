@@ -24,19 +24,19 @@ public class LocationsAdapter extends ArrayAdapter<Locations>{
     private Context myContext;
     private List<Locations> locationsList = new ArrayList<Locations>();
 
-    public LocationsAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Locations> objects) {
+    public LocationsAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Locations> objects) {    //constructor which needs context, the xml resource (layout file), and the array of objects
         super(context, resource, objects);
         myContext = context;
         locationsList = objects;
     }
 
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
-        View listItem = convertView;
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){       //this method access the array at position to grab the information and place it
+    View listItem = convertView;
         if(listItem == null){
             listItem = LayoutInflater.from(myContext).inflate(R.layout.list_locations, parent, false);
         }
-        Locations currLoc = locationsList.get(position);
+        Locations currLoc = locationsList.get(position);                        //these lines take the information from the current array position to fill the list
         TextView tvName = (TextView)listItem.findViewById(R.id.locName);
         tvName.setText("Name: "+currLoc.getName());
         TextView tvAdd = (TextView)listItem.findViewById(R.id.locEmail);
