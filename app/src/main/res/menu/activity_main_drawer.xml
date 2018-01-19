@@ -3,10 +3,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <!--this is the layout for our drawer. It holds all the menu items, including the icon for each. -->
     <group android:checkableBehavior="none">
+
         <item
-            android:id="@+id/bottle_banks"
-            android:icon="@drawable/ic_bin"
-            android:title="@string/show_all" />
+            android:id="@+id/showall"
+            android:title="Show All Recycling Facilities"
+            android:icon="@drawable/ic_showall"
+             />
         <item
             android:id="@+id/bin_comapanies"
             android:icon="@drawable/ic_bin_lorry"
@@ -34,11 +36,12 @@
         <item
             android:id="@+id/selectBinDay"
             android:title="Set Bin Day Reminder"
-            android:icon="@drawable/ic_add"/>
+            android:icon="@drawable/ic_calendar"/>
         <item
-            android:id="@+id/showall"
-            android:title="Show All Recycling Facilities"
-            android:icon="@drawable/ic_showall"/>
+            android:id="@+id/bottle_banks"
+            android:icon="@drawable/ic_lists"
+            android:title="@string/show_all"
+            />
 
     </group>
     <!--creates a second menu for settings and about options-->
