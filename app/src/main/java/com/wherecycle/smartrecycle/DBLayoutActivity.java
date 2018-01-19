@@ -34,9 +34,8 @@ public class DBLayoutActivity extends ChildActivity {
 
 
         myDB = FirebaseDatabase.getInstance().getReference();                                       //instaniate the database at ROOT
-        myDBList = (ListView)findViewById(R.id.DBList);                                             //instantiate the listview
+        myDBList = (ListView) findViewById(R.id.DBList);                                             //instantiate the listview
         final ArrayList<Locations> myDBArray = new ArrayList<>();                                   //instantiate the object array
-
 
 
         myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {            //this method allow us to read data from the database, ROOT->Recycling Centres
@@ -47,8 +46,8 @@ public class DBLayoutActivity extends ChildActivity {
                     Locations locations = child.getValue(Locations.class);                          //here we assign the current Location to a variable                                         //->LocationObject2
                     myDBArray.add(locations);                                                       //so we can add it to the object array                                                      //->etc, etc, ...
                 }
-                arrayAdapter = new LocationsAdapter(DBLayoutActivity.this, R.layout.list_locations, myDBArray);
-                myDBList.setAdapter(arrayAdapter);
+                arrayAdapter = new LocationsAdapter(DBLayoutActivity.this, R.layout.list_locations, myDBArray); //call the adapter
+                myDBList.setAdapter(arrayAdapter);                                                  //set the adapter to the listview
             }
 
             @Override
@@ -58,7 +57,6 @@ public class DBLayoutActivity extends ChildActivity {
                 startActivity(intent);
             }
         });
-
 
     }
 }
