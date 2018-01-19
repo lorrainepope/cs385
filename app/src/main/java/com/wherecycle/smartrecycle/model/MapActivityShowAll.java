@@ -39,7 +39,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.wherecycle.smartrecycle.DBLayoutActivity;
 import com.wherecycle.smartrecycle.MainActivity;
 import com.wherecycle.smartrecycle.R;
 
@@ -276,7 +275,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
 
-                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 12.0f,
+                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 9.0f,
                                     "My Location");
 
                         }else{
