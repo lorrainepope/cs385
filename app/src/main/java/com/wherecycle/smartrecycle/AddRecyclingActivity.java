@@ -18,9 +18,11 @@ public class AddRecyclingActivity extends ChildActivity {
     private CheckBox eAlu, eBatt, eCard, eElec, eFurn, eGlass, eMetal, ePlast, eText;
     private Button submit;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle("Add Recycling Facility");
         setContentView(R.layout.activity_add_recycling);
 
         myDB = FirebaseDatabase.getInstance().getReference();

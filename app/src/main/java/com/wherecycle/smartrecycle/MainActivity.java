@@ -96,9 +96,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onClick(View view, final int position) {
-                //Values are passing to activity & to fragment as well
-
-
                 sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("nameKey", position);
@@ -209,8 +206,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.selectBinDay) {
             Intent addIntent = new Intent(MainActivity.this, SelectBinDayActivity.class);
             startActivity(addIntent);
-
-        } else if (id == R.id.settings) {
 
         }else if (id == R.id.about) {
             Intent aboutIntent = new Intent(MainActivity.this, AboutActivity.class);
