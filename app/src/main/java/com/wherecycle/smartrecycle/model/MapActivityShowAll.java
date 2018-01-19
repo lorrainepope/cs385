@@ -12,9 +12,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -37,7 +39,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.wherecycle.smartrecycle.DBLayoutActivity;
 import com.wherecycle.smartrecycle.MainActivity;
 import com.wherecycle.smartrecycle.R;
 
@@ -47,6 +48,29 @@ import java.util.List;
 
 
 public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyCallback {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //this method adds a back button.
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; goto parent activity.
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ActionBar ab = getSupportActionBar();
+        if(ab!=null){
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
@@ -131,7 +155,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
             }
         });
 
-        if (mLocationPermissionGranted) {
+        if (mLocationPermissionGranted) { //if location permissions are accepted
             getDeviceLocation();
 
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -193,6 +217,8 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
 
                     //execute method for searching
                     geoLocate();
+                    mSearchText.setText(null);  // clears field when the search is finished.
+
                 }
                 return false;
             }
@@ -209,7 +235,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
 
         hideSoftKeyboard();
     }
-    private void geoLocate(){
+    private void geoLocate(){ //this method is used to find a location through search.
         Log.d(TAG, "geoLocate: geolocating");
 
         String searchString = mSearchText.getText().toString();
@@ -225,14 +251,15 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         if(list.size()>0){
             Address address = list.get(0);
 
-            //Toast.makeText(this, address.toString(), Toast.LENGTH_SHORT).show();
-
-            moveCamera(new LatLng(address.getLatitude(),address.getLongitude()), DEFAULT_ZOOM,
+            moveCamera(new LatLng(address.getLatitude(),address.getLongitude()), 12.0f,
                     address.getAddressLine(0));
 
         }
     }
 
+
+    //The below method finds the location of the device which will act as a starting location for
+    // the map when it is initialised.
     private void getDeviceLocation(){
         Log.d(TAG,"getDeviceLocation: current location");
 
@@ -248,10 +275,8 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
 
-                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
-                                    DEFAULT_ZOOM,
+                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 9.0f,
                                     "My Location");
-
 
                         }else{
                             Log.d(TAG, "onComplete: current location is null");

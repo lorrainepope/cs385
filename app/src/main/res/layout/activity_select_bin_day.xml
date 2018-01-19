@@ -15,7 +15,6 @@
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -25,7 +24,10 @@
         android:layout_marginBottom="8dp"
         android:onClick="onDateSelectedButtonClick"
         android:text="Select your next bin collection day"
-        app:layout_constraintBottom_toTopOf="@+id/datePicker" />
+        app:layout_constraintBottom_toTopOf="@+id/datePicker"
+        android:background="@drawable/button_shape"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 
 
 </android.support.constraint.ConstraintLayout>
