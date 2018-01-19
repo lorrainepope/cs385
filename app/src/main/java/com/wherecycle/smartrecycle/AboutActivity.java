@@ -10,5 +10,6 @@ public class AboutActivity extends ChildActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         this.setTitle("About");
+
     }
 }

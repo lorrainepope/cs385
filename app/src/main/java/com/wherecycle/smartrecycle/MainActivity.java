@@ -96,14 +96,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onClick(View view, final int position) {
+
                 sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("nameKey", position);
                 editor.apply();
-                Intent intent = new Intent(MainActivity.this, MapActivityShowAll.class);
-                startActivity(intent);
+                if (isServicesOK()) { //only starts map activity if google service okay.
+                    Intent intent = new Intent(MainActivity.this, MapActivityShowAll.class);
+                    startActivity(intent);
+                }
             }
-
             @Override
             public void onLongClick(View view, int position) {
 
@@ -127,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this, available, ERROR_DIALOG_REQUEST);
             dialog.show();
         } else {
+            //THE USER CANNOT MAKE MAP REQUESTS
             Toast.makeText(this, "You cant make map requests", Toast.LENGTH_SHORT).show();
         }
         return false;
