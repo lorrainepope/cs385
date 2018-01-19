@@ -45,10 +45,6 @@
     <item android:title="">
         <menu>
             <item
-                android:id="@+id/settings"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/settings" />
-            <item
                 android:id="@+id/about"
                 android:icon="@drawable/ic_about"
                 android:title="@string/about" />

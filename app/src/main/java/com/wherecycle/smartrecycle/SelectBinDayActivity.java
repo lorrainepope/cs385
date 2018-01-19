@@ -18,6 +18,7 @@ public class SelectBinDayActivity extends ChildActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle("Select Bin Day");
         setContentView(R.layout.activity_select_bin_day);
 
         // Create a new service client and bind our activity to this service
