@@ -40,7 +40,7 @@ public class LocationsAdapter extends ArrayAdapter<Locations>{
         TextView tvName = (TextView)listItem.findViewById(R.id.locName);
         tvName.setText("Name: "+currLoc.getName());
         TextView tvAdd = (TextView)listItem.findViewById(R.id.locEmail);
-        tvAdd.setText("Contact: "+currLoc.getEmail());
+        tvAdd.setText("Email: "+currLoc.getEmail());
         TextView tvLat = (TextView)listItem.findViewById(R.id.locLat);
         tvLat.setText("Latitude: "+currLoc.getLat());
         TextView tvLng = (TextView)listItem.findViewById(R.id.locLng);

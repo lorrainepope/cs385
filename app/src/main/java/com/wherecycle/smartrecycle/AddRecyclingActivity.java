@@ -14,21 +14,9 @@ import com.wherecycle.smartrecycle.model.Locations;
 
 public class AddRecyclingActivity extends ChildActivity {
     private DatabaseReference myDB;
-    private EditText eName;
-    private EditText eEmail;
-    private EditText ePhone;
-    private EditText eLat;
-    private EditText eLong;
+    private EditText eName, eEmail, ePhone, eLat, eLong;
+    private CheckBox eAlu, eBatt, eCard, eElec, eFurn, eGlass, eMetal, ePlast, eText;
     private Button submit;
-    private CheckBox eAlu;
-    private CheckBox eBatt;
-    private CheckBox eCard;
-    private CheckBox eElec;
-    private CheckBox eFurn;
-    private CheckBox eGlass;
-    private CheckBox eMetal;
-    private CheckBox ePlast;
-    private CheckBox eText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +24,6 @@ public class AddRecyclingActivity extends ChildActivity {
         setContentView(R.layout.activity_add_recycling);
 
         myDB = FirebaseDatabase.getInstance().getReference();
-
 
         eName = (EditText)findViewById(R.id.enterRName);
         eEmail = (EditText)findViewById(R.id.enterREmail);
