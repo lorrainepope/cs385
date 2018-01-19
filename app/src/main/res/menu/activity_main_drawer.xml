@@ -32,6 +32,10 @@
             android:title="Add Recycling Centre"
             android:icon="@drawable/ic_add"/>
         <item
+            android:id="@+id/selectBinDay"
+            android:title="Set Bin Day Reminder"
+            android:icon="@drawable/ic_add"/>
+        <item
             android:id="@+id/showall"
             android:title="Show All Recycling Facilities"
             android:icon="@drawable/ic_showall"/>
@@ -40,10 +44,6 @@
     <!--creates a second menu for settings and about options-->
     <item android:title="">
         <menu>
-            <item
-                android:id="@+id/settings"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/settings" />
             <item
                 android:id="@+id/about"
                 android:icon="@drawable/ic_about"

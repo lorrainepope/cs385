@@ -96,8 +96,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onClick(View view, final int position) {
-                //Values are passing to activity & to fragment as well
-
 
                 sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
@@ -110,8 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             @Override
             public void onLongClick(View view, int position) {
-                Toast.makeText(MainActivity.this, "Long press on position :" + position,
-                        Toast.LENGTH_LONG).show();
+
             }
 
         }));
@@ -148,29 +145,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
-    //    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -204,7 +179,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent addIntent = new Intent(MainActivity.this, AddRecyclingActivity.class);
             startActivity(addIntent);
 
-        } else if (id == R.id.settings) {
+        } else if (id == R.id.selectBinDay) {
+            Intent addIntent = new Intent(MainActivity.this, SelectBinDayActivity.class);
+            startActivity(addIntent);
 
         }else if (id == R.id.about) {
             Intent aboutIntent = new Intent(MainActivity.this, AboutActivity.class);

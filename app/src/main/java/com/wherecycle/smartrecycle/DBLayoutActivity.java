@@ -23,26 +23,20 @@ import java.util.ArrayList;
 
 public class DBLayoutActivity extends ChildActivity {
     private DatabaseReference myDB;
-    //private final ArrayList<Locations> myDBArray = new ArrayList<>();
-    private int nEle = 0;
     private ListView myDBList;
-    private ArrayList<String> myKeys = new ArrayList<>();
     private LocationsAdapter arrayAdapter;
-    SharedPreferences sp;
-    private final String fileName = "myFile";
-    private int recyc;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dblayout);
 
-        sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
-        recyc = sp.getInt("nameKey", -1);
 
-        myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
+        myDB = FirebaseDatabase.getInstance().getReference();
         myDBList = (ListView)findViewById(R.id.DBList);
         final ArrayList<Locations> myDBArray = new ArrayList<>();
+
 
 
         myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
@@ -51,36 +45,7 @@ public class DBLayoutActivity extends ChildActivity {
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 for (DataSnapshot child : children) {
                     Locations locations = child.getValue(Locations.class);
-                    nEle++;
-                    if (recyc == 0) {
-                        if (locations.isAlumin()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 7) {
-                        if (locations.isBatteries()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 6) {
-                        if (locations.isCardboard()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 5) {
-                        if (locations.isElectronics()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 4) {
-                        if (locations.isFurniture()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 8) {
-                        if (locations.isGlass()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 2) {
-                        if (locations.isMetal()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 3) {
-                        if (locations.isPlastics()) {myDBArray.add(locations);}
-                    }
-                    else if (recyc == 1) {
-                        if (locations.isTextiles()) {myDBArray.add(locations);}
-                    }
-
-                    else{myDBArray.add(locations);}
+                    myDBArray.add(locations);
                 }
             }
 

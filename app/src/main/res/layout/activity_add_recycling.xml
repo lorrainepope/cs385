@@ -79,7 +79,7 @@
 
     <CheckBox
         android:id="@+id/checkAlu"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -89,7 +89,7 @@
 
     <CheckBox
         android:id="@+id/checkBatt"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -99,7 +99,7 @@
 
     <CheckBox
         android:id="@+id/checkCard"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -109,7 +109,7 @@
 
     <CheckBox
         android:id="@+id/checkElec"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -119,7 +119,7 @@
 
     <CheckBox
         android:id="@+id/checkFurn"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -129,7 +129,7 @@
 
     <CheckBox
         android:id="@+id/checkGlass"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -139,7 +139,7 @@
 
     <CheckBox
         android:id="@+id/checkMetal"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -149,7 +149,7 @@
 
     <CheckBox
         android:id="@+id/checkPlas"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -159,7 +159,7 @@
 
     <CheckBox
         android:id="@+id/checkTexti"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"

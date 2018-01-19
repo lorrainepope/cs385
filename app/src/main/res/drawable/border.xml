@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This xml file creates the border for each text box in benefits of recycling and what not to recycle options-->
     <shape xmlns:android="http://schemas.android.com/apk/res/android"
         android:shape="rectangle" >
 

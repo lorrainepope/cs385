@@ -2,6 +2,7 @@ package com.wherecycle.smartrecycle.model;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -38,6 +39,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.wherecycle.smartrecycle.DBLayoutActivity;
+import com.wherecycle.smartrecycle.MainActivity;
 import com.wherecycle.smartrecycle.R;
 
 import java.io.IOException;
@@ -75,7 +78,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         Log.d(TAG, "onMapReady: map is ready ");
         mMap = googleMap;
 
-        SharedPreferences sp;
+        final SharedPreferences sp;
         final String fileName = "myFile";
 
         final int recyc;
@@ -85,7 +88,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
 
 
         DatabaseReference myDB;
-        myDB = FirebaseDatabase.getInstance().getReference(); //.child("Recycling Centres");
+        myDB = FirebaseDatabase.getInstance().getReference();
         myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -93,82 +96,63 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                 for (DataSnapshot child : children) {
                     Locations locations = child.getValue(Locations.class);
                     if (recyc == 0) {
-                 
                         if (locations.isAlumin()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 7) {
-                   
+                    } else if (recyc == 7) {
                         if (locations.isBatteries()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 6) {
-
-                   
+                    } else if (recyc == 6) {
                         if (locations.isCardboard()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 5) {
-                 
+                    } else if (recyc == 5) {
                         if (locations.isElectronics()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 4) {
-                
+                    } else if (recyc == 4) {
                         if (locations.isFurniture()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 8) {
-
-                 
+                    } else if (recyc == 8) {
                         if (locations.isGlass()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 2) {
-
-                
+                    } else if (recyc == 2) {
                         if (locations.isMetal()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 3) {
-                 
+                    } else if (recyc == 3) {
                         if (locations.isPlastics()) {
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-                    else if (recyc == 1) {
-                 
+                    } else if (recyc == 1) {
                         if (locations.isTextiles()){
                             LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                         }
-                    }
-
-                    else{
+                    } else{
                         LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                        mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Email: "+locations.getEmail()).snippet("Phone: "+locations.getPhone()));
+                        mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
                     }
                 }
+                sp.edit().clear().commit();//resets the map to show all markers
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Toast.makeText(MapActivityShowAll.this, "Database Read Failed", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MapActivityShowAll.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
