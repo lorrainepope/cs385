@@ -47,6 +47,8 @@ public class DBLayoutActivity extends ChildActivity {
                     Locations locations = child.getValue(Locations.class);                          //here we assign the current Location to a variable                                         //->LocationObject2
                     myDBArray.add(locations);                                                       //so we can add it to the object array                                                      //->etc, etc, ...
                 }
+                arrayAdapter = new LocationsAdapter(DBLayoutActivity.this, R.layout.list_locations, myDBArray);
+                myDBList.setAdapter(arrayAdapter);
             }
 
             @Override
@@ -57,8 +59,7 @@ public class DBLayoutActivity extends ChildActivity {
             }
         });
 
-        arrayAdapter = new LocationsAdapter(this, R.layout.list_locations, myDBArray);
-        myDBList.setAdapter(arrayAdapter);
+
     }
 }
 
