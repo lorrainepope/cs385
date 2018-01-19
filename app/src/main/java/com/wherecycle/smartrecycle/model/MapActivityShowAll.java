@@ -82,22 +82,22 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
 
         final int recyc;
         sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
-        recyc = sp.getInt("nameKey", -1);
+        recyc = sp.getInt("nameKey", -1);                                                      //recyc is assigned the the shared preference value from the RecyclerView
 
 
 
-        DatabaseReference myDB;
-        myDB = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference myDB;                                                                     //declare the database
+        myDB = FirebaseDatabase.getInstance().getReference();                                       //and instantiate it
         myDB.child("Recycling Centres").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-                for (DataSnapshot child : children) {
-                    Locations locations = child.getValue(Locations.class);
-                    if (recyc == 0) {
-                        if (locations.isAlumin()) {
-                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());
-                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();                       //iterable gives us the ability to traverse the database
+                for (DataSnapshot child : children) {                                               //here we traverse the iterable
+                    Locations locations = child.getValue(Locations.class);                          //we make a new location equal to the location the iterable is currently looking at
+                    if (recyc == 0) {                                                               //here we check what recyc is equal to , to discover which Recycler item was clicked
+                        if (locations.isAlumin()) {                                                 //then the appropriate boolean is checked. This filters out all the Locations that do not recycle the desired material
+                            LatLng newLocation = new LatLng(locations.getLat(), locations.getLng());//we create a LatLng data type here, calling the getter methods of the Location
+                            mMap.addMarker(new MarkerOptions().position(newLocation).title(locations.getName()).snippet("Phone: "+locations.getPhone()));   //here we use our LatLng to make a marker and to add a title and snippet from th eLOcation information
                         }
                     } else if (recyc == 7) {
                         if (locations.isBatteries()) {

@@ -97,12 +97,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view, final int position) {
 
-                sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+                sp = getSharedPreferences(fileName, Context.MODE_PRIVATE);  //instantiate SharedPreferences
                 SharedPreferences.Editor editor = sp.edit();
-                editor.putInt("nameKey", position);
+                editor.putInt("nameKey", position);                       //set value of nameKey equal to the position of the clicked recycler item
                 editor.apply();
                 if (isServicesOK()) { //only starts map activity if google service okay.
-                    Intent intent = new Intent(MainActivity.this, MapActivityShowAll.class);
+                    Intent intent = new Intent(MainActivity.this, MapActivityShowAll.class);    //jump to map activity
                     startActivity(intent);
                 }
             }

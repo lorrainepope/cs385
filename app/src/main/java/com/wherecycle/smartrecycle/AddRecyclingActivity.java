@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.wherecycle.smartrecycle.model.Locations;
 
 public class AddRecyclingActivity extends ChildActivity {
-    private DatabaseReference myDB;
+    private DatabaseReference myDB;                             //declaring the various variables needed
     private EditText eName, eEmail, ePhone, eLat, eLong;
     private CheckBox eAlu, eBatt, eCard, eElec, eFurn, eGlass, eMetal, ePlast, eText;
     private Button submit;
@@ -27,7 +27,7 @@ public class AddRecyclingActivity extends ChildActivity {
 
         myDB = FirebaseDatabase.getInstance().getReference();
 
-        eName = (EditText)findViewById(R.id.enterRName);
+        eName = (EditText)findViewById(R.id.enterRName);        //linking the variables to the xml widgets
         eEmail = (EditText)findViewById(R.id.enterREmail);
         ePhone = (EditText)findViewById(R.id.enterRPhone);
         eLat = (EditText)findViewById(R.id.enterRLat);
@@ -42,7 +42,7 @@ public class AddRecyclingActivity extends ChildActivity {
         ePlast = (CheckBox) findViewById(R.id.checkPlas);
         eText = (CheckBox) findViewById(R.id.checkTexti);
 
-        submit = (Button)findViewById(R.id.submitRecycling);
+        submit = (Button)findViewById(R.id.submitRecycling);        //on click we String all the text entries
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,10 +50,10 @@ public class AddRecyclingActivity extends ChildActivity {
                 String DBEmail = eEmail.getText().toString();
                 String DBPhone = ePhone.getText().toString();
                 String strLat = eLat.getText().toString();
-                double DBLat = Double.parseDouble(strLat);
+                double DBLat = Double.parseDouble(strLat);          //and parse the latitude and longitude into doubles
                 String strLong = eLong.getText().toString();
                 double DBLong = Double.parseDouble(strLong);
-                boolean DBAlu = eAlu.isChecked();
+                boolean DBAlu = eAlu.isChecked();                   //the checkboxes become booleans.
                 boolean DBBatt = eBatt.isChecked();
                 boolean DBCard = eCard.isChecked();
                 boolean DBElec = eElec.isChecked();
@@ -61,13 +61,13 @@ public class AddRecyclingActivity extends ChildActivity {
                 boolean DBGlass = eGlass.isChecked();
                 boolean DBMetal = eMetal.isChecked();
                 boolean DBPlast = ePlast.isChecked();
-                boolean DBText = eText.isChecked();
+                boolean DBText = eText.isChecked();                 //these variables are psuhed into the constructor below
 
                 Locations newRecycler = new Locations(DBName, DBLat, DBLong, DBPhone, DBEmail, DBAlu, DBBatt, DBCard, DBElec, DBFurn, DBGlass, DBMetal, DBPlast, DBText);
-                myDB.child("Recycling Centres").push().setValue(newRecycler);
+                myDB.child("Recycling Centres").push().setValue(newRecycler);   //and here the new object is pushed to the database
 
                 Toast.makeText(AddRecyclingActivity.this, "Database has been updated.", Toast.LENGTH_SHORT).show();
-                eName.setText("");
+                eName.setText("");                                      //the following lines empty the widgets so that you may type anew
                 eEmail.setText("");
                 ePhone.setText("");
                 eLat.setText("");
