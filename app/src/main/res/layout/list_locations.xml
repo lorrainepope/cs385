@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/border"
-    android:paddingLeft="10dp"
-    android:paddingTop="5dp"
-    android:layout_marginTop="5dp"
     android:layout_marginRight="10dp"
-    android:orientation="vertical">
+    android:layout_marginTop="5dp"
+    android:background="@drawable/border"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp">
 
     <TextView
         android:id="@+id/locName"
@@ -27,15 +28,16 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/locLat"
+        android:id="@+id/locPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/locLng"
+        android:id="@+id/locLatLng"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

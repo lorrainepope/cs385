@@ -41,10 +41,10 @@ public class LocationsAdapter extends ArrayAdapter<Locations>{
         tvName.setText("Name: "+currLoc.getName());
         TextView tvAdd = (TextView)listItem.findViewById(R.id.locEmail);
         tvAdd.setText("Email: "+currLoc.getEmail());
-        TextView tvLat = (TextView)listItem.findViewById(R.id.locLat);
-        tvLat.setText("Latitude: "+currLoc.getLat());
-        TextView tvLng = (TextView)listItem.findViewById(R.id.locLng);
-        tvLng.setText("Longitude: "+currLoc.getLng());
+        TextView tvPhone = (TextView)listItem.findViewById(R.id.locPhone);
+        tvPhone.setText("Phone: "+currLoc.getPhone());
+        TextView tvLatLng = (TextView)listItem.findViewById(R.id.locLatLng);
+        tvLatLng.setText("Co-ordinates: "+currLoc.getLat()+", "+currLoc.getLng());
 
         return listItem;
     }
