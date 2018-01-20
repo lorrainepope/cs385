@@ -292,6 +292,7 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
         }
     }
 
+    // this method moves the camera to a specific location that is searched. It also adds a marker.
     private void moveCamera(LatLng latLng, float zoom, String title ){
         Log.d(TAG, "moveCamera: moving the camera to lat" + latLng.latitude + ", lng " + latLng.longitude );
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
@@ -324,12 +325,13 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                 FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
                     COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                mLocationPermissionGranted = true;
+                mLocationPermissionGranted = true; //both location permissions granted
                 initMap();
             } else {
                 ActivityCompat.requestPermissions(this,
                         permissions,
                         LOCATION_PERMISSION_REQ_CODE);
+                        //asks for permission for Coarse Location
             }
         } else {
             ActivityCompat.requestPermissions(this,
@@ -337,16 +339,18 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                     LOCATION_PERMISSION_REQ_CODE);
         }
     }
-        @Override
-        public void onRequestPermissionsResult(int requestCode, String[] permissions,
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
          int[] grantResults){
             Log.d(TAG, "onRequestPermissionResult: called. ");
-            mLocationPermissionGranted = false;
+            mLocationPermissionGranted = false; //initially set to false
 
             switch (requestCode) {
                 case LOCATION_PERMISSION_REQ_CODE: {
                     if (grantResults.length > 0) {
                         for (int i = 0; i < grantResults.length; i++) {
+                            //loops though all the grant results as the could be more than one.
                             if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
                                 mLocationPermissionGranted = false;
                                 Log.d(TAG, "onRequestPermissionResult: failed.");
@@ -355,20 +359,18 @@ public class MapActivityShowAll extends AppCompatActivity implements OnMapReadyC
                         }
                         Log.d(TAG, "onRequestPermissionResult: granted.");
                         mLocationPermissionGranted = true;
-                        //initialise map
+                        //then initialise map because permissions have been granted
                         initMap();
                     }
                 }
             }
-        }
+    }
 
     private void hideSoftKeyboard(){
         Log.d(TAG, "hideSoftKeyboard: hiding.");
          this.getWindow().setSoftInputMode((WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN));
     }
 
-    private class FusedLocationProviderClient {
-    }
 }
 
 
